@@ -100,75 +100,75 @@ KeyTab		DW	5E00h,0701h, 310Eh,0801h, 1312h,1101h, 2106h,1201h
 KeyTabE		LABEL	WORD
 
 		.CONST
-MenuLn1		DB	' ^Brief'			,0
-		DB	' ^Full'			,0
-		DB	' D^escription'			,0
+MenuLn1		DB	' ^Kurz'			,0
+		DB	' ^Lang'			,0
+		DB	' ^Text'			,0
 		DB	' ^Info'			,0
 		DB	' ^Tree'			,0
-		DB	' ^Quick view'			,0
-		DB	' ^On/Off'    ,0FFh,7,'Ctrl-F1'	,0
-		DB	' Long n^ames',0FFh,3,'Ctrl-N'	,0
+		DB	' ^Vorschau'			,0
+		DB	' ^Ein/Aus'    ,0FFh,7,'Ctrl-F1'	,0
+		DB	' Lange N^amen',0FFh,3,'Ctrl-N'	,0
 		DB					 0
 		DB	' ^Name'			,0
-		DB	' E^xtension'			,0
-		DB	' Ti^me'			,0
-		DB	' ^Size'			,0
-		DB	' ^Unsorted'			,0
-		DB	' Re^verse'			,0
+		DB	' ^Endung'			,0
+		DB	' ^Zeit'			,0
+		DB	' ^Groesse'			,0
+		DB	' ^Unsortiert'			,0
+		DB	' Umge^kehrt'			,0
 		DB					 0
-		DB	' ^Re-read'  ,0FFh,6,'Ctrl-R'	,0
+		DB	' ^Neu lesen'  ,0FFh,6,'Ctrl-R'	,0
 		DB	' Fi^lter...',0FFh,4,'Ctrl-F'	,0
-		DB	' ^Drive...' ,0FFh,5,'Alt-F1'	,0
-MenuLn2		DB	'^Help'		 ,0FFh,14,'F1'	 ,0
-		DB	'^User menu'	 ,0FFh, 9,'F2'	 ,0
-		DB	'^View'		 ,0FFh,14,'F3'	 ,0
-		DB	'^Edit'		 ,0FFh,14,'F4'	 ,0
-		DB	'^Copy'		 ,0FFh,14,'F5'	 ,0
-		DB	'^Rename or move',0FFh, 4,'F6'	 ,0
-		DB	'^Make directory',0FFh, 4,'F7'	 ,0
-		DB	'^Delete'	 ,0FFh,12,'F8'	 ,0
+		DB	' ^Laufwerk...' ,0FFh,5,'Alt-F1'	,0
+MenuLn2		DB	'^Hilfe'		 ,0FFh,14,'F1'	 ,0
+		DB	'^Benutzermenue'	 ,0FFh, 9,'F2'	 ,0
+		DB	'^Anzeigen'		 ,0FFh,14,'F3'	 ,0
+		DB	'^Bearbeiten'		 ,0FFh,14,'F4'	 ,0
+		DB	'^Kopieren'		 ,0FFh,14,'F5'	 ,0
+		DB	'^Umbenennen/Verschieben',0FFh, 4,'F6'	 ,0
+		DB	'^Verzeichnis anlegen',0FFh, 4,'F7'	 ,0
+		DB	'^Loeschen'	 ,0FFh,12,'F8'	 ,0
 		DB					  0
-		DB	'^Attributes'  ,0FFh,8,'Ctrl-A'	 ,0
+		DB	'^Attribute'  ,0FFh,8,'Ctrl-A'	 ,0
 		DB					  0
-		DB	'Select ^group'	 ,0FFh,6,'Gray +',0
-		DB	'U^nselect group',0FFh,4,'Gray -',0
-		DB	'^Invert group'	 ,0FFh,6,'Gray *',0
-		DB	'Re^store selection Ctrl-M'	 ,0
+		DB	'Gruppe ^waehlen'	 ,0FFh,6,'Gray +',0
+		DB	'Gruppe ab^waehlen',0FFh,4,'Gray -',0
+		DB	'Gruppe ^umkehren'	 ,0FFh,6,'Gray *',0
+		DB	'Auswahl ^holen Ctrl-M'	 ,0
 		DB					  0
-		DB	'^Quit'		 ,0FFh,14,'F10'	 ,0
-MenuLn3		DB	'^Tree'		      ,0FFh,18,'Alt-F10',0
-		DB	'Volume ^label'	      ,0FFh,10,'Ctrl-F4',0
-		DB	'Memory ^info'	      ,0FFh,11,'Alt-F5'	,0
-		DB	'^Directory sizes'    ,0FFh, 7,'Alt-F6'	,0
-		DB	'^Find file'	      ,0FFh,13,'Alt-F7'	,0
-		DB	'^History'	      ,0FFh,15,'Alt-F8'	,0
-		DB	'^EGA lines'	      ,0FFh,13,'Alt-F9'	,0
-		DB	'^Video mode'	      ,0FFh,12,'Ctrl-F9',0
+		DB	'^Beenden'		 ,0FFh,14,'F10'	 ,0
+MenuLn3		DB	'^Baum'		      ,0FFh,18,'Alt-F10',0
+		DB	'Volume-^Label'	      ,0FFh,10,'Ctrl-F4',0
+		DB	'Speicher^info'	      ,0FFh,11,'Alt-F5'	,0
+		DB	'^Verzeichnisgroessen'    ,0FFh, 7,'Alt-F6'	,0
+		DB	'^Datei suchen'	      ,0FFh,13,'Alt-F7'	,0
+		DB	'^Verlauf'	      ,0FFh,15,'Alt-F8'	,0
+		DB	'^EGA-Zeilen'	      ,0FFh,13,'Alt-F9'	,0
+		DB	'^Videomodus'	      ,0FFh,12,'Ctrl-F9',0
 		DB					     0
-		DB	'^Swap panels'	      ,0FFh,11,'Ctrl-U'	,0
-		DB	'^Panels on/off'      ,0FFh, 9,'Ctrl-O'	,0
-		DB	'^Compare directories',0FFh, 3,'Ctrl-C'	,0
+		DB	'Fenster ^tauschen'	      ,0FFh,11,'Ctrl-U'	,0
+		DB	'Fenster ein/aus'      ,0FFh, 9,'Ctrl-O'	,0
+		DB	'Verzeichnisse ^vergleichen',0FFh, 3,'Ctrl-C'	,0
 		DB						 0
-		DB	'^Menu file edit'			,0
-MenuLn4		DB	' ^General...'			,0
-		DB	' ^Interface...'		,0
-		DB	' C^haracters...'		,0
-		DB	' ^Panels...'			,0
-		DB	' ^Descriptions...'		,0
-		DB	' Sc^reen saver...'		,0
-		DB	' ^Copy and Move...'		,0
+		DB	'^Menue-Datei bearbeiten'			,0
+MenuLn4		DB	' ^Allgemein...'			,0
+		DB	' ^Oberflaeche...'		,0
+		DB	' ^Zeichen...'		,0
+		DB	' ^Fenster...'			,0
+		DB	' ^Beschreibungen...'		,0
+		DB	' ^Bildschirmschoner...'		,0
+		DB	' ^Kopieren/Verschieben...'		,0
 		DB					 0
-		DB	' E^xtension file edit...'	,0
-		DB	' ^Viewers...'			,0
-		DB	' ^Editors...'			,0
+		DB	' ^Erweiterungsdatei...'	,0
+		DB	' ^Betrachter...'			,0
+		DB	' ^Editoren...'			,0
 		DB					 0
-		DB	' ^Auto menus'			,0
-		DB	' ^Key bar'    ,0FFh,12,'Ctrl-B',0
-		DB	' ^Full screen'			,0
-		DB	' Mi^ni status'			,0
-		DB	' ^Memory allocation'		,0
+		DB	' ^Automatische Menues'			,0
+		DB	' ^Tastenleiste'    ,0FFh,12,'Ctrl-B',0
+		DB	' ^Vollbild'			,0
+		DB	' Mi^nistatus'			,0
+		DB	' ^Speicherbelegung'		,0
 		DB					 0
-		DB	' ^Save setup',0FFh,9,'Shift-F9',0
+		DB	' ^Einstellungen speichern',0FFh,9,'Shift-F9',0
 
 		.DATA
 Menu_T		DW	Menu1_T
@@ -1215,16 +1215,16 @@ M15_00:		MOV	BX,OFFSET SortRev	; Reverced sort
 
 		.CONST
 Filter_S	DB	' Filter ',0
-Filter0_S	DB	' Ú ^bFilter^b ',0FFh,80h+20,'Ä¿  Ú ^bAttributes^b ',0FFh,80h+6,'Ä¿ ',0
-Filter1_S	DB	0FFh,32,'³  [ ] Archive'  ,0FFh,5,'³',0
-Filter2_S	DB	0FFh,32,'³  [ ] System'   ,0FFh,6,'³',0
-Filter3_S	DB	0FFh,32,'³  [ ] Hidden'   ,0FFh,6,'³',0
-Filter4_S	DB	0FFh,32,'³  [ ] Directory',0FFh,3,'³',0
-Filter5_S	DB	0FFh,32,'³  [ ] Absent'   ,0FFh,6,'³',0
-Filter6_S	DB	0FFh,32,'À',0FFh,80h+18,         'ÄÙ',0
-Filter7_S	DB	'³  ( ) ^0E21< ³',0
-Filter8_S	DB	'³',0FFh,    28, '³',0
-Filter9_S	DB	'À',0FFh,80h+28,'ÄÙ',0
+Filter0_S	DB	' Ãš ^bFilter^b ',0FFh,80h+20,'Ã„Â¿  Ãš ^bAttributes^b ',0FFh,80h+6,'Ã„Â¿ ',0
+Filter1_S	DB	0FFh,32,'Â³  [ ] Archive'  ,0FFh,5,'Â³',0
+Filter2_S	DB	0FFh,32,'Â³  [ ] System'   ,0FFh,6,'Â³',0
+Filter3_S	DB	0FFh,32,'Â³  [ ] Hidden'   ,0FFh,6,'Â³',0
+Filter4_S	DB	0FFh,32,'Â³  [ ] Directory',0FFh,3,'Â³',0
+Filter5_S	DB	0FFh,32,'Â³  [ ] Absent'   ,0FFh,6,'Â³',0
+Filter6_S	DB	0FFh,32,'Ã€',0FFh,80h+18,         'Ã„Ã™',0
+Filter7_S	DB	'Â³  ( ) ^0E21< Â³',0
+Filter8_S	DB	'Â³',0FFh,    28, 'Â³',0
+Filter9_S	DB	'Ã€',0FFh,80h+28,'Ã„Ã™',0
 Custom_S	DB	'Custom:',0
 OkCn_S		DB	'[ Ok ]',0FFh,3,'[ Cancel ]',0
 
@@ -2105,18 +2105,18 @@ M52_10		ENDP
 
 		.CONST
 General00_S	DB			' General options ',0
-General01_S	DB	'Ú ^bExecution options^b '	   ,0FFh,80h+23,'Ä¿',0
-General02_S	DB	'³  [ ] Quick execute commands'		,0FFh,14,'³',0
-General03_S	DB	'³  Command shell options:'		,0FFh,18,'³',0
-General04_S	DB	'³'					,0FFh,42,'³',0
-General05_S	DB	'Ú ^bView and Edit^b '		   ,0FFh,80h+27,'Ä¿',0
-General06_S	DB	'³  [ ] Alternative viewer'		,0FFh,18,'³',0
-General07_S	DB	'³  [ ] Alternative editor'		,0FFh,18,'³',0
-General08_S	DB	'Ú ^bOther options^b '		   ,0FFh,80h+27,'Ä¿',0
-General09_S	DB	'³  [ ] Auto save setup'		,0FFh,21,'³',0
-General10_S	DB	'³  [ ] Show logical drive B:'		,0FFh,15,'³',0
-General11_S	DB	'³  [ ] Show short names in lower case'	,0FFh, 6,'³',0
-General12_S	DB	' À'				   ,0FFh,80h+42,'ÄÙ',0
+General01_S	DB	'Ãš ^bExecution options^b '	   ,0FFh,80h+23,'Ã„Â¿',0
+General02_S	DB	'Â³  [ ] Quick execute commands'		,0FFh,14,'Â³',0
+General03_S	DB	'Â³  Command shell options:'		,0FFh,18,'Â³',0
+General04_S	DB	'Â³'					,0FFh,42,'Â³',0
+General05_S	DB	'Ãš ^bView and Edit^b '		   ,0FFh,80h+27,'Ã„Â¿',0
+General06_S	DB	'Â³  [ ] Alternative viewer'		,0FFh,18,'Â³',0
+General07_S	DB	'Â³  [ ] Alternative editor'		,0FFh,18,'Â³',0
+General08_S	DB	'Ãš ^bOther options^b '		   ,0FFh,80h+27,'Ã„Â¿',0
+General09_S	DB	'Â³  [ ] Auto save setup'		,0FFh,21,'Â³',0
+General10_S	DB	'Â³  [ ] Show logical drive B:'		,0FFh,15,'Â³',0
+General11_S	DB	'Â³  [ ] Show short names in lower case'	,0FFh, 6,'Â³',0
+General12_S	DB	' Ã€'				   ,0FFh,80h+42,'Ã„Ã™',0
 Prompt1_S	DB	'Press ^r Space ^r to change an option, ^r  ^r and ^r  ^r',0
 Prompt2_S	DB	'to move between options',0
 
@@ -2167,19 +2167,19 @@ M61_02:		MOV	DS,DS:WCBcrn
 
 		.CONST
 Interface00_S	DB			' Interface options ',0
-Interface01_S	DB	'Ú ^bGeneral options^b '   ,0FFh,80h+15,'Ä¿  Ú ^bScreen colors^b ',0FFh,80h+12,'Ä¿',0
-Interface02_S	DB	'³  [ ] Clock'			,0FFh,21,'³  ³  ( ) Black & White'     ,0FFh, 8,'³',0
-Interface03_S	DB	'³  [ ] Path prompt'		,0FFh,15,'³  ³  ( ) Color'	       ,0FFh,16,'³',0
-Interface04_S	DB	'³  [ ] Menu bar always visible',0FFh, 3,'³  ³  ( ) Laptop'	       ,0FFh,15,'³',0
-Interface05_S	DB	'³  [ ] Alt alone selects menu'	,0FFh, 4,'³  À'			  ,0FFh,80h+27,'ÄÙ',0
-Interface06_S	DB	'³  [ ] Esc toggles screen on/off ³  Ú ^bScreen output^b '	  ,0FFh,80h+12,'Ä¿',0
-Interface07_S	DB	'³  [ ] Clear keyboard buffer'	,0FFh, 5,'³  ³  ( ) Synchronized access  ³',0
-Interface08_S	DB	'³  [ ] Confirmation on quit'	,0FFh, 6,'³  ³  ( ) Asynchronized access ³',0
-Interface09_S	DB	'³  [ ] Error sound'		,0FFh,15,'³  ³  ( ) Auto detect'       ,0FFh,10,'³',0
-Interface10_S	DB	'Ú ^bMouse options^b '	   ,0FFh,80h+17,'Ä¿  Ú ^bZoom options^b ' ,0FFh,80h+13,'Ä¿',0
-Interface11_S	DB	'³  [ ] Left-handed mouse'	,0FFh, 9,'³  ³  [ ] Zooming boxes'     ,0FFh, 8,'³',0
-Interface12_S	DB	'³  [ ] Fast mouse reset'	,0FFh,10,'³  ³  Zoom stages:'	       ,0FFh,13,'³',0
-Interface13_S	DB	' À'			   ,0FFh,80h+32,'ÄÙ  À'			 ,0FFh,80h+27,'ÄÙ ',0
+Interface01_S	DB	'Ãš ^bGeneral options^b '   ,0FFh,80h+15,'Ã„Â¿  Ãš ^bScreen colors^b ',0FFh,80h+12,'Ã„Â¿',0
+Interface02_S	DB	'Â³  [ ] Clock'			,0FFh,21,'Â³  Â³  ( ) Black & White'     ,0FFh, 8,'Â³',0
+Interface03_S	DB	'Â³  [ ] Path prompt'		,0FFh,15,'Â³  Â³  ( ) Color'	       ,0FFh,16,'Â³',0
+Interface04_S	DB	'Â³  [ ] Menu bar always visible',0FFh, 3,'Â³  Â³  ( ) Laptop'	       ,0FFh,15,'Â³',0
+Interface05_S	DB	'Â³  [ ] Alt alone selects menu'	,0FFh, 4,'Â³  Ã€'			  ,0FFh,80h+27,'Ã„Ã™',0
+Interface06_S	DB	'Â³  [ ] Esc toggles screen on/off Â³  Ãš ^bScreen output^b '	  ,0FFh,80h+12,'Ã„Â¿',0
+Interface07_S	DB	'Â³  [ ] Clear keyboard buffer'	,0FFh, 5,'Â³  Â³  ( ) Synchronized access  Â³',0
+Interface08_S	DB	'Â³  [ ] Confirmation on quit'	,0FFh, 6,'Â³  Â³  ( ) Asynchronized access Â³',0
+Interface09_S	DB	'Â³  [ ] Error sound'		,0FFh,15,'Â³  Â³  ( ) Auto detect'       ,0FFh,10,'Â³',0
+Interface10_S	DB	'Ãš ^bMouse options^b '	   ,0FFh,80h+17,'Ã„Â¿  Ãš ^bZoom options^b ' ,0FFh,80h+13,'Ã„Â¿',0
+Interface11_S	DB	'Â³  [ ] Left-handed mouse'	,0FFh, 9,'Â³  Â³  [ ] Zooming boxes'     ,0FFh, 8,'Â³',0
+Interface12_S	DB	'Â³  [ ] Fast mouse reset'	,0FFh,10,'Â³  Â³  Zoom stages:'	       ,0FFh,13,'Â³',0
+Interface13_S	DB	' Ã€'			   ,0FFh,80h+32,'Ã„Ã™  Ã€'			 ,0FFh,80h+27,'Ã„Ã™ ',0
 InterfErr1_S	DB	'Zoom stages value should be',0
 InterfErr2_S	DB	'between 2 and 10. Try again.',0
 
@@ -2292,15 +2292,15 @@ M62_10		ENDP
 
 		.CONST
 Chars0_S	DB			' Characters ',0
-Chars1_S	DB	'Ú ^bBorders^b '		      ,0FFh,80h+36,'Ä¿',0
-Chars2_S	DB	'³  Panels and'	      ,0FFh,11,'Pull-down' ,0FFh,13,'³',0
-Chars3_S	DB	'³  dialogs'	      ,0FFh,14,'menu'	   ,0FFh,18,'³',0
-Chars4_S	DB	'Ú ^bOther^b '			      ,0FFh,80h+38,'Ä¿',0
-Chars5_S	DB	'³  Left/Right scroll',0FFh,4,'Scroll bars',0FFh,11,'³',0
-Chars6_S	DB	'³  Mouse pointers'  ,0FFh,7,'Progress bars',0FFh,9,'³',0
-Chars7_S	DB	'³  Items switched on',0FFh,4,'Hidden/selected files ³',0
-Chars8_S	DB	'³'					   ,0FFh,45,'³',0
-Chars9_S	DB	' À'				      ,0FFh,80h+45,'ÄÙ ',0
+Chars1_S	DB	'Ãš ^bBorders^b '		      ,0FFh,80h+36,'Ã„Â¿',0
+Chars2_S	DB	'Â³  Panels and'	      ,0FFh,11,'Pull-down' ,0FFh,13,'Â³',0
+Chars3_S	DB	'Â³  dialogs'	      ,0FFh,14,'menu'	   ,0FFh,18,'Â³',0
+Chars4_S	DB	'Ãš ^bOther^b '			      ,0FFh,80h+38,'Ã„Â¿',0
+Chars5_S	DB	'Â³  Left/Right scroll',0FFh,4,'Scroll bars',0FFh,11,'Â³',0
+Chars6_S	DB	'Â³  Mouse pointers'  ,0FFh,7,'Progress bars',0FFh,9,'Â³',0
+Chars7_S	DB	'Â³  Items switched on',0FFh,4,'Hidden/selected files Â³',0
+Chars8_S	DB	'Â³'					   ,0FFh,45,'Â³',0
+Chars9_S	DB	' Ã€'				      ,0FFh,80h+45,'Ã„Ã™ ',0
 
 		.DATA
 Chars_P		DB	Conf_C, CnfRe_C, CnfBo_C, 0
@@ -2510,19 +2510,19 @@ M63_21		ENDP
 
 		.CONST
 PanelOpt00_S	DB			' Panel options ',0
-PanelOpt01_S	DB	' Ú ^bFile panel^b '			,0FFh,80h+34,'Ä¿ ',0
-PanelOpt02_S	DB	'³  [ ] Ins moves down'			      ,0FFh,26,'³',0
-PanelOpt03_S	DB	'³  [ ] Ins calculates size of directory'     ,0FFh, 8,'³',0
-PanelOpt04_S	DB	'³  [ ] Auto directory sizes'		      ,0FFh,20,'³',0
-PanelOpt05_S	DB	'³  [ ] Unselect during group operations'     ,0FFh, 8,'³',0
-PanelOpt06_S	DB	'³  [ ] Highlight subdirectories'	      ,0FFh,16,'³',0
-PanelOpt07_S	DB	'Ú ^bTree panel^b '			 ,0FFh,80h+34,'Ä¿',0
-PanelOpt08_S	DB	'³  [ ] Show hidden subdirectories'	      ,0FFh,14,'³',0
-PanelOpt09_S	DB	'³  [ ] Save TREEINFO in root directory'      ,0FFh, 9,'³',0
-PanelOpt10_S	DB	'³  [ ] Save TREEINFO in home directory'      ,0FFh, 9,'³',0
-PanelOpt11_S	DB	'³  [ ] Auto change directory'		      ,0FFh,19,'³',0
-PanelOpt12_S	DB	'³  Auto change directory time delay:'	      ,0FFh,11,'³',0
-PanelOpt13_S	DB	'À'					 ,0FFh,80h+46,'ÄÙ',0
+PanelOpt01_S	DB	' Ãš ^bFile panel^b '			,0FFh,80h+34,'Ã„Â¿ ',0
+PanelOpt02_S	DB	'Â³  [ ] Ins moves down'			      ,0FFh,26,'Â³',0
+PanelOpt03_S	DB	'Â³  [ ] Ins calculates size of directory'     ,0FFh, 8,'Â³',0
+PanelOpt04_S	DB	'Â³  [ ] Auto directory sizes'		      ,0FFh,20,'Â³',0
+PanelOpt05_S	DB	'Â³  [ ] Unselect during group operations'     ,0FFh, 8,'Â³',0
+PanelOpt06_S	DB	'Â³  [ ] Highlight subdirectories'	      ,0FFh,16,'Â³',0
+PanelOpt07_S	DB	'Ãš ^bTree panel^b '			 ,0FFh,80h+34,'Ã„Â¿',0
+PanelOpt08_S	DB	'Â³  [ ] Show hidden subdirectories'	      ,0FFh,14,'Â³',0
+PanelOpt09_S	DB	'Â³  [ ] Save TREEINFO in root directory'      ,0FFh, 9,'Â³',0
+PanelOpt10_S	DB	'Â³  [ ] Save TREEINFO in home directory'      ,0FFh, 9,'Â³',0
+PanelOpt11_S	DB	'Â³  [ ] Auto change directory'		      ,0FFh,19,'Â³',0
+PanelOpt12_S	DB	'Â³  Auto change directory time delay:'	      ,0FFh,11,'Â³',0
+PanelOpt13_S	DB	'Ã€'					 ,0FFh,80h+46,'Ã„Ã™',0
 PanelErr1_S	DB	'Auto change directory time delay',0
 PanelErr2_S	DB	'is incorrect. Try again.',0
 
@@ -2679,11 +2679,11 @@ M64_10		ENDP
 
 		.CONST
 Descript0_S	DB			' Descriptions ',0
-Descript1_S	DB	'Ú ^bProcess descriptions^b ' ,0FFh,80h+38,'Ä¿',0
-Descript2_S	DB	'³  ( ) Do not update descriptions',0FFh,28,'³',0
-Descript3_S	DB	'³  ( ) Update if displayed'	   ,0FFh,35,'³',0
-Descript4_S	DB	'³  ( ) Always update'		   ,0FFh,41,'³',0
-Descript5_S	DB	'À'			      ,0FFh,80h+60,'ÄÙ',0
+Descript1_S	DB	'Ãš ^bProcess descriptions^b ' ,0FFh,80h+38,'Ã„Â¿',0
+Descript2_S	DB	'Â³  ( ) Do not update descriptions',0FFh,28,'Â³',0
+Descript3_S	DB	'Â³  ( ) Update if displayed'	   ,0FFh,35,'Â³',0
+Descript4_S	DB	'Â³  ( ) Always update'		   ,0FFh,41,'Â³',0
+Descript5_S	DB	'Ã€'			      ,0FFh,80h+60,'Ã„Ã™',0
 Descript6_S	DB	'Description files',0FFh,LenStr-17,0
 Descript7_S	DB	'Directory information files',0FFh,LenStr-27,0
 
@@ -2721,16 +2721,16 @@ M65_00:		PUSH	ES			; Descriptions
 
 		.CONST
 CopyOpt00_S	DB			' Copy and Move options ',0
-CopyOpt01_S	DB	' Ú ^bDescriptions^b '				   ,0FFh,80h+48,'Ä¿ ',0
-CopyOpt02_S	DB	' ³  [ ] Auto create descriptions'			,0FFh,32,'³ ',0
-CopyOpt03_S	DB	' ³  [ ] Delete target description if source without description ³ ',0
-CopyOpt04_S	DB	' ³  [ ] Auto delete empty description files'		,0FFh,21,'³ ',0
-CopyOpt05_S	DB	' Ú ^bOS/2 options^b '				   ,0FFh,80h+48,'Ä¿ ',0
-CopyOpt06_S	DB	' ³  [ ] Copy extended attributes'			,0FFh,32,'³ ',0
-CopyOpt07_S	DB	' Ú ^bOther options^b '				   ,0FFh,80h+47,'Ä¿ ',0
-CopyOpt08_S	DB	' ³  [ ] Check target file and free space before copying',0FFh,9,'³ ',0
-CopyOpt09_S	DB	' ³  [ ] Clear read-only attribute when copy from CD-ROM',0FFh,9,'³ ',0
-CopyOpt10_S	DB	' À'						   ,0FFh,80h+62,'ÄÙ ',0
+CopyOpt01_S	DB	' Ãš ^bDescriptions^b '				   ,0FFh,80h+48,'Ã„Â¿ ',0
+CopyOpt02_S	DB	' Â³  [ ] Auto create descriptions'			,0FFh,32,'Â³ ',0
+CopyOpt03_S	DB	' Â³  [ ] Delete target description if source without description Â³ ',0
+CopyOpt04_S	DB	' Â³  [ ] Auto delete empty description files'		,0FFh,21,'Â³ ',0
+CopyOpt05_S	DB	' Ãš ^bOS/2 options^b '				   ,0FFh,80h+48,'Ã„Â¿ ',0
+CopyOpt06_S	DB	' Â³  [ ] Copy extended attributes'			,0FFh,32,'Â³ ',0
+CopyOpt07_S	DB	' Ãš ^bOther options^b '				   ,0FFh,80h+47,'Ã„Â¿ ',0
+CopyOpt08_S	DB	' Â³  [ ] Check target file and free space before copying',0FFh,9,'Â³ ',0
+CopyOpt09_S	DB	' Â³  [ ] Clear read-only attribute when copy from CD-ROM',0FFh,9,'Â³ ',0
+CopyOpt10_S	DB	' Ã€'						   ,0FFh,80h+62,'Ã„Ã™ ',0
 
 		.DATA
 CopyOpt_P	DB	Conf_C, CnfRe_C, CnfBo_C, 0
