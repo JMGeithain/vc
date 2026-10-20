@@ -26,7 +26,76 @@ jobs:
       - name: Prepare upstream reproducible build environment
         run: |
           git clone --depth 1 --branch build --recurse-submodules https://github.com/ddanila/vc.git /tmp/vc-build
-          cp versions/4.99.09/VCMENU.INC /tmp/vc-build/versions/4.99.09/VCMENU.INC
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("/tmp/vc-build/versions/4.99.09/VCMENU.INC")
+          s = p.read_text(encoding="utf-8")
+          replacements = [
+              ("' ^Brief'", "' ^Kurz'"),
+              ("' ^Full'", "' ^Lang'"),
+              ("' D^escription'", "' ^Text'"),
+              ("' ^Quick view'", "' ^Vorschau'"),
+              ("' ^On/Off'", "' ^Ein/Aus'"),
+              ("' Long n^ames'", "' Lange N^amen'"),
+              ("' E^xtension'", "' ^Endung'"),
+              ("' Ti^me'", "' ^Zeit'"),
+              ("' ^Size'", "' ^Groesse'"),
+              ("' ^Unsorted'", "' ^Unsortiert'"),
+              ("' Re^verse'", "' Umge^kehrt'"),
+              ("' ^Re-read'", "' ^Neu lesen'"),
+              ("' ^Drive...'", "' ^Laufwerk...'"),
+              ("'^Help'", "'^Hilfe'"),
+              ("'^User menu'", "'^Benutzermenue'"),
+              ("'^View'", "'^Anzeigen'"),
+              ("'^Edit'", "'^Bearbeiten'"),
+              ("'^Copy'", "'^Kopieren'"),
+              ("'^Rename or move'", "'^Umbenennen/Verschieben'"),
+              ("'^Make directory'", "'^Verzeichnis anlegen'"),
+              ("'^Delete'", "'^Loeschen'"),
+              ("'^Attributes'", "'^Attribute'"),
+              ("'Select ^group'", "'Gruppe ^waehlen'"),
+              ("'U^nselect group'", "'Gruppe ab^waehlen'"),
+              ("'^Invert group'", "'Gruppe ^umkehren'"),
+              ("'^Quit'", "'^Beenden'"),
+              ("'^Tree'", "'^Baum'"),
+              ("'Volume ^label'", "'Volume-^Label'"),
+              ("'Memory ^info'", "'Speicher^info'"),
+              ("'^Directory sizes'", "'^Verzeichnisgroessen'"),
+              ("'^Find file'", "'^Datei suchen'"),
+              ("'^History'", "'^Verlauf'"),
+              ("'^EGA lines'", "'^EGA-Zeilen'"),
+              ("'^Video mode'", "'^Videomodus'"),
+              ("'^Swap panels'", "'Fenster ^tauschen'"),
+              ("'^Panels on/off'", "'Fenster ein/aus'"),
+              ("'^Compare directories'", "'Verzeichnisse ^vergleichen'"),
+              ("'^Menu file edit'", "'^Menue-Datei bearbeiten'"),
+              ("' ^General...'", "' ^Allgemein...'"),
+              ("' ^Interface...'", "' ^Oberflaeche...'"),
+              ("' C^haracters...'", "' ^Zeichen...'"),
+              ("' ^Panels...'", "' ^Fenster...'"),
+              ("' ^Descriptions...'", "' ^Beschreibungen...'"),
+              ("' Sc^reen saver...'", "' ^Bildschirmschoner...'"),
+              ("' ^Copy and Move...'", "' ^Kopieren/Verschieben...'"),
+              ("' E^xtension file edit...'", "' ^Erweiterungsdatei...'"),
+              ("' ^Viewers...'", "' ^Betrachter...'"),
+              ("' ^Editors...'", "' ^Editoren...'"),
+              ("' ^Auto menus'", "' ^Automatische Menues'"),
+              ("' ^Key bar'", "' ^Tastenleiste'"),
+              ("' ^Full screen'", "' ^Vollbild'"),
+              ("' Mi^ni status'", "' Mi^nistatus'"),
+              ("' ^Memory allocation'", "' ^Speicherbelegung'"),
+              ("' ^Save setup'", "' ^Einstellungen speichern'"),
+          ]
+          applied = 0
+          for old, new in replacements:
+              if old in s:
+                  s = s.replace(old, new)
+                  applied += 1
+          if applied < 15:
+              raise SystemExit(f"Too few menu translations applied ({applied}); source changed?")
+          p.write_text(s, encoding="utf-8")
+          print(f"Applied {applied} German menu translations.")
+          PY
 
       - name: Build VC 4.99.09
         working-directory: /tmp/vc-build
