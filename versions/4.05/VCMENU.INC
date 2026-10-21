@@ -42,33 +42,33 @@ MenuLn1	DB	' Kurz'			,0
 	DB	' Filter...'	   ,0FFh,4,'^F'	,0
 	DB	' Laufwerk...'	   ,0FFh,5,'@F1',0
 MenuLn2	DB	'Hilfe'		   ,0FFh,14,'F1',0
-	DB	'Benutzermenue'	   ,0FFh, 9,'F2',0
+	DB	'Benutzermenue'	   ,0FFh, 8,'F2',0
 	DB	'Anzeigen'		   ,0FFh,14,'F3',0
-	DB	'Bearbeiten'		   ,0FFh,14,'F4',0
+	DB	'Bearb.'		   ,0FFh,14,'F4',0
 	DB	'Kopieren'		   ,0FFh,14,'F5',0
-	DB	'Umbenennen/Verschieben'   ,0FFh, 4,'F6',0
-	DB	'Verzeichnis anlegen'   ,0FFh, 4,'F7',0
+	DB	'Umben./Versch.'	   ,0FFh, 4,'F6',0
+	DB	'Ordner anlegen'	   ,0FFh, 4,'F7',0
 	DB	'Loeschen'	   ,0FFh,12,'F8',0
 	DB					 0
 	DB	'Dateiattribute'  ,0FFh, 3,'^A',0
 	DB					 0
-	DB	'Gruppe waehlen'	,0FFh,6,'Gray +',0
-	DB	'Gruppe abwaehlen',0FFh,4,'Gray -',0
-	DB	'Gruppe umkehren'	,0FFh,6,'Gray *',0
-	DB	'Auswahl wiederherstellen ^M'		,0
+	DB	'Gruppe waehlen'	,0FFh,4,'Gray +',0
+	DB	'Gruppe abw.'	,0FFh,4,'Gray -',0
+	DB	'Gruppe umk.'	,0FFh,6,'Gray *',0
+	DB	'Auswahl herst. ^M'		,0
 	DB					 0
 	DB	'Beenden'		 ,0FFh,14,'F10'	,0
 MenuLn3	DB	'Baum'		 ,0FFh,18,'@F10',0
 	DB	'Datentraeger'	 ,0FFh,10,'^F4'	,0
 	DB	'Speicherinfo'	 ,0FFh,11,'@F5'	,0
-	DB	'Verzeichnisgroessen',0FFh, 7,'@F6'	,0
+	DB	'Verz.groessen'	,0FFh, 7,'@F6'	,0
 	DB	'Datei suchen'	 ,0FFh,13,'@F7'	,0
 	DB	'Verlauf'	 ,0FFh,15,'@F8'	,0
 	DB	'EGA-Zeilen'	 ,0FFh,13,'@F9'	,0
 	DB					 0
-	DB	'Fenster tauschen'	   ,0FFh,11,'^U',0
+	DB	'Fenster tausch.'	   ,0FFh,10,'^U',0
 	DB	'Fenster ein/aus'	   ,0FFh, 9,'^O',0
-	DB	'Verzeichnisse vergleichen',0FFh,3,'^C',0
+	DB	'Verz. vergleich.'	,0FFh,3,'^C',0
 	DB					 0
 	DB	'Menue-Datei bearbeiten'		,0
 MenuLn4	DB	' Konfiguration...'		,0
@@ -81,12 +81,12 @@ MenuLn4	DB	' Konfiguration...'		,0
 	DB	' Pfadabfrage'			,0
 	DB	' Tastenleiste'	   ,0FFh,12,'^B',0
 	DB	' Vollbild'			,0
-	DB	' Verzeichnisgroessen automatisch'		,0
+	DB	' Verz.groessen auto'		,0
 	DB	' Ministatus'			,0
 	DB	' Uhr'			,0
 	DB	' Speicherbelegung'		,0
 	DB					 0
-	DB	' Einstellungen speichern' ,0FFh,9,'Shift-F9',0
+	DB	' Einst. speichern' ,0FFh,6,'Shift-F9',0
 Ctrl_S	DB	'Strg-'
 Alt_S	DB	'Alt-'
 
