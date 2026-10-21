@@ -1018,11 +1018,11 @@ M08_00:	MOV	CL,CH			; Sort
 
 	.CONST
 Filt0_S	DB	' Filter ',0
-Filt1_S	DB	'Select files to display',0
-Filt2_S	DB	'Custom:',0FFh,14,0
-Filt3_S	DB	'[ ] Hidden files',0FFh,5,0
-Filt4_S	DB	'[ ] Executable files ',0
-OkCn_S  DB	'[ Ok ]',0FFh,3,'[ Cancel ]',0
+Filt1_S	DB	'Dateien anzeigen',0
+Filt2_S	DB	'Eigene:',0FFh,14,0
+Filt3_S	DB	'[ ] Versteckte',0FFh,5,0
+Filt4_S	DB	'[ ] Programme      ',0
+OkCn_S  DB	'[ Ok ]',0FFh,3,'[Abbruch]',0
 
 	.DATA
 Filt_P	DB	Box_C, BoxCu_C, Box_C, 0
@@ -1111,8 +1111,8 @@ M41_00:	CALL	PutMnu3			; Alt F10 - Tree
 M41_01:	JMP	Init50
 
 	.CONST
-DiSi1_S	DB	'Scanning sizes of subdirectories',0
-DiSi2_S	DB	'on drive ^V:',0
+DiSi1_S	DB	'Ermittle Verzeichnisgroessen',0
+DiSi2_S	DB	'auf Laufwerk ^V:',0
 
 	.DATA
 DiSiz_P	DB	Box_C, 0, 0, 0
@@ -1241,8 +1241,8 @@ F69_09:	JMP	M60_02
 
 	.CONST
 Cmp0_S	DB	' Compare ',0
-Cmp1_S	DB	'The two directories appear',0
-Cmp2_S	DB	'to be identical.',0
+Cmp1_S	DB	'Die beiden Verzeichnisse sind',0
+Cmp2_S	DB	'offenbar identisch.',0
 
 	.DATA
 CmpDi_P	DB	Box_C, BoxCu_C, BoxCu_C, 0
@@ -1460,11 +1460,11 @@ M61_01:	JMP	Func04
 
 	.CONST
 ExFl_S	DB	' Extension File ',0
-MnLc1_S	DB	'Do you wish to edit the main,',0
-MnLc2_S	DB	'or a local ^I?',0
-UsMnu_S	DB	'user menu',0
-ExtFl_S	DB	'extension file',0
-MnLc3_S	DB	'Main',0FFh,3,'Local',0FFh,3,'Cancel',0
+MnLc1_S	DB	'Hauptmenue bearbeiten oder',0
+MnLc2_S	DB	'lokales ^I?',0
+UsMnu_S	DB	'Benutzermenue',0
+ExtFl_S	DB	'Dateierweiterungsdatei',0
+MnLc3_S	DB	'Haupt',0FFh,3,'Lokal',0FFh,3,'Abbruch',0
 
 	.DATA
 MnLoc_P	DB	Box_C, BoxCu_C, BoxCu_C, 0
@@ -1583,11 +1583,11 @@ M73_00:	MOV	BX,OFFSET LoadFl	; Memory allocation
 
 	.CONST
 SvSt0_S	DB	' Setup ',0
-SvSt1_S	DB	'Do you wish to save',0
-SvSt2_S	DB	'the current setup?',0
-SvSt3_S	DB	'Save',0FFh,3,'Cancel',0
-StEr1_S	DB	'There was an error while',0
-StEr2_S	DB	'saving the setup file',0
+SvSt1_S	DB	'Aktuelle Einstellungen',0
+SvSt2_S	DB	'speichern?',0
+SvSt3_S	DB	'Speichern',0FFh,3,'Cancel',0
+StEr1_S	DB	'Fehler beim',0
+StEr2_S	DB	'Speichern der Setup-Datei',0
 
 	.DATA
 SvSt_P	DB	Box_C, BoxCu_C, BoxCu_C, 0
