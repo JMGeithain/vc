@@ -34,26 +34,4 @@ jobs:
           VC_BUILD_MODE: native
         run: ./build.sh 4.05
 
-      - name: Verify output and package
-        run: |
-          test -s /tmp/vc-build/build/4.05/VC.COM
-          test -s /tmp/vc-build/build/4.05/VCSETUP.COM
-          mkdir -p dist
-          cp /tmp/vc-build/build/4.05/VC.COM dist/VC.COM
-          cp /tmp/vc-build/build/4.05/VCSETUP.COM dist/VCSETUP.COM
-          cat > dist/README-DE.txt <<'EOF'
-          Volkov Commander 4.05 – deutsche Testfassung
-
-          Entwicklungsstand, kein offizielles Release.
-          Enthalten: VC.COM und VCSETUP.COM.
-          Bitte zuerst in DOSBox mit einer Testkopie ausprobieren.
-          Menue-Tastenkombinationen und Dateioperationen nach dem Start pruefen.
-          EOF
-
-      - name: Upload DOS binaries
-        uses: actions/upload-artifact@v4
-        with:
-          name: vc-4.05-german-test
-          path: dist/
-          if-no-files-found: error
-          retention-days: 14
+undefined
