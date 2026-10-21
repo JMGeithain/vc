@@ -200,7 +200,15 @@ jobs:
                       seen[old] += 1
                       value = value.replace(old, new)
               return value
-          dos_source = re.sub(rb"'[^']*'", translate_literal, dos_source)
+          translated_lines = []
+          for line in dos_source.splitlines(keepends=True):
+              if b'DB' in line and (b"'" in line or b'"' in line):
+                  for old, new in translations:
+                      if old in line:
+                          seen[old] += 1
+                          line = line.replace(old, new)
+              translated_lines.append(line)
+          dos_source = b''.join(translated_lines)
           missing = [old.decode('ascii') for old, count in seen.items() if count == 0]
           if missing:
               raise SystemExit('Missing expected setup labels: ' + ', '.join(missing))
