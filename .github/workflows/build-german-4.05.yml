@@ -34,4 +34,30 @@ jobs:
           VC_BUILD_MODE: native
         run: ./build.sh 4.05
 
-undefined
+      - name: Collect binaries and build diagnostics
+        if: always()
+        run: |
+          mkdir -p dist
+          for f in VC.COM VCSETUP.COM; do
+            if [ -s "/tmp/vc-build/build/4.05/$f" ]; then cp "/tmp/vc-build/build/4.05/$f" "dist/$f"; fi
+          done
+          if [ -f /tmp/vc-build/build/4.05/stage/build.log ]; then cp /tmp/vc-build/build/4.05/stage/build.log dist/BUILD.LOG; fi
+          if [ -f /tmp/vc-build/build/4.05/stage/debugcon.log ]; then cp /tmp/vc-build/build/4.05/stage/debugcon.log dist/DEBUGCON.LOG; fi
+          cat > dist/README-DE.txt <<'EOF'
+          Volkov Commander 4.05 – deutsche Testfassung
+
+          Entwicklungsstand, kein offizielles Release.
+          Bitte zuerst in DOSBox mit einer Testkopie ausprobieren.
+          BUILD.LOG und DEBUGCON.LOG enthalten Diagnosedaten.
+          EOF
+          test -s dist/VC.COM
+          test -s dist/VCSETUP.COM
+
+      - name: Upload DOS binaries and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vc-4.05-german-test
+          path: dist/
+          if-no-files-found: warn
+          retention-days: 14
