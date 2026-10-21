@@ -321,9 +321,9 @@ Init_S	DB	       'The ',PrgName,' Setup, Version ',VcVers
 	DB	13,10, 'Copyright (C) 1991-2000 Vsevolod V. Volkov'
 	DB	13,10
 	DB	13,10, '$'
-Vers_S	DB	13,10, 'This program requires DOS 3.20 or later.'
+Vers_S	DB	13,10, 'Dieses Programm benoetigt DOS 3.20 oder neuer.'
 	DB	13,10, '$'
-Aloc_S	DB	13,10, 'Program too big to fit in memory'
+Aloc_S	DB	13,10, 'Programm zu gross fuer den Speicher'
 	DB	13,10, '$'
 Init_F	DB	'VC.INI'
 Empty_S	DB	0
@@ -716,16 +716,16 @@ Err3:	JMP	Main00
 
 ;---------------------- Main Menu ----------------------
 	.CONST
-SetUp_S	DB	' Setup ',0
-Main1_S	DB	'F2   Configuration',     0FFh,13,0
-Main2_S	DB	'F3   Screen and Mouse',  0FFh,10,0
-Main3_S	DB	'F4   Panel options',     0FFh,13,0
-Main4_S	DB	'F5   Set Black & White palette ',0
-Main5_S	DB	'F6   Set Color palette',  0FFh,9,0
-Main6_S	DB	'F7   Set Laptop palette', 0FFh,8,0
-Main7_S	DB	'F8   Set default configuration ',0
-Main8_S	DB	'F9   Country info',      0FFh,14,0
-Main9_S	DB	'F10  Exit',              0FFh,22,0
+SetUp_S	DB	' Einrichtung ',0
+Main1_S	DB	'F2   Konfiguration',     0FFh,13,0
+Main2_S	DB	'F3   Bildschirm & Maus',  0FFh,10,0
+Main3_S	DB	'F4   Paneloptionen',     0FFh,13,0
+Main4_S	DB	'F5   S/W-Palette setzen',0
+Main5_S	DB	'F6   Farbpalette setzen',  0FFh,9,0
+Main6_S	DB	'F7   Laptop-Palette', 0FFh,8,0
+Main7_S	DB	'F8   Standardwerte laden',0
+Main8_S	DB	'F9   Landesinfo',      0FFh,14,0
+Main9_S	DB	'F10  Beenden',              0FFh,22,0
 
 	.DATA
 MainHlp	DB	1, 2, 3, 4, 4, 4, 5, 6, 7
