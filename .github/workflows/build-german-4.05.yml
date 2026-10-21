@@ -29,15 +29,95 @@ jobs:
           cp versions/4.05/VCMENU.INC /tmp/vc-build/versions/4.05/VCMENU.INC
           python3 - <<'PY'
           from pathlib import Path
+
           source = Path('/tmp/vc-build/versions/4.05/VCSUB2.INC')
           data = source.read_bytes()
           old = b"PtMnu_S\tDB\t0FFh,4,'Left',0FFh,4,'Files',0FFh,4,'Commands'\r\n\tDB\t0FFh,4,'Options',0FFh,4,'Right',0FFh,31,0"
           new = b"PtMnu_S\tDB\t0FFh,4,'Links',0FFh,4,'Dateien',0FFh,4,'Befehle'\r\n\tDB\t0FFh,4,'Optionen',0FFh,4,'Rechts',0FFh,26,0"
           if data.count(old) != 1:
               raise SystemExit('Expected one 4.05 menu-bar source block')
-          source.write_bytes(data.replace(old, new))
+          data = data.replace(old, new)
+
+          old_keys = (
+              b"Key_S\tDB\t'      '\t\t;  0\r\n"
+              b"\tDB\t'Help  '\t\t;  1\r\n"
+              b"\tDB\t'Menu  '\t\t;  2\r\n"
+              b"\tDB\t'View  '\t\t;  3\r\n"
+              b"\tDB\t'Edit  '\t\t;  4\r\n"
+              b"\tDB\t'Copy  '\t\t;  5\r\n"
+              b"\tDB\t'RenMov'\t\t;  6\r\n"
+              b"\tDB\t'Mkdir '\t\t;  7\r\n"
+              b"\tDB\t'Delete'\t\t;  8\r\n"
+              b"\tDB\t'PullDn'\t\t;  9\r\n"
+              b"\tDB\t'Quit  '\t\t; 10\r\n"
+              b"\tDB\t'SavSet'\t\t; 11\r\n"
+              b"\tDB\t'PullDn'\t\t; 12\r\n"
+              b"\tDB\t'Left  '\t\t; 13\r\n"
+              b"\tDB\t'Right '\t\t; 14\r\n"
+              b"\tDB\t'View..'\t\t; 15\r\n"
+              b"\tDB\t'Edit..'\t\t; 16\r\n"
+              b"\tDB\t'DirSiz'\t\t; 17\r\n"
+              b"\tDB\t'Find  '\t\t; 18\r\n"
+              b"\tDB\t'Histry'\t\t; 19\r\n"
+              b"\tDB\t'EGA Ln'\t\t; 20\r\n"
+              b"\tDB\t'Tree  '\t\t; 21\r\n"
+              b"\tDB\t'ASCII '\t\t; 22\r\n"
+              b"\tDB\t'Hex   '\t\t; 23\r\n"
+              b"\tDB\t'Wrap  '\t\t; 24\r\n"
+              b"\tDB\t'Unwrap'\t\t; 25\r\n"
+              b"\tDB\t'Search'\t\t; 26\r\n"
+              b"\tDB\t'Save  '\t\t; 27\r\n"
+              b"\tDB\t'Save..'\t\t; 28\r\n"
+              b"\tDB\t'Q&Save'\t\t; 29\r\n"
+              b"\tDB\t'Memory'\t\t; 30\r\n"
+              b"\tDB\t'Main  '\t\t; 31\r\n"
+              b"\tDB\t'Label '\t\t; 32\r\n"
+              b"\tDB\t'Rescan'\t\t; 33"
+          )
+          new_keys = (
+              b"Key_S\tDB\t'      '\t\t;  0\r\n"
+              b"\tDB\t'Hilfe '\t\t;  1\r\n"
+              b"\tDB\t'Menue '\t\t;  2\r\n"
+              b"\tDB\t'Ansich'\t\t;  3\r\n"
+              b"\tDB\t'Bearb.'\t\t;  4\r\n"
+              b"\tDB\t'Kopier'\t\t;  5\r\n"
+              b"\tDB\t'Umben.'\t\t;  6\r\n"
+              b"\tDB\t'Ordner'\t\t;  7\r\n"
+              b"\tDB\t'Loesch'\t\t;  8\r\n"
+              b"\tDB\t'Menue>'\t\t;  9\r\n"
+              b"\tDB\t'Ende  '\t\t; 10\r\n"
+              b"\tDB\t'Sich. '\t\t; 11\r\n"
+              b"\tDB\t'Menue>'\t\t; 12\r\n"
+              b"\tDB\t'Links '\t\t; 13\r\n"
+              b"\tDB\t'Rechts'\t\t; 14\r\n"
+              b"\tDB\t'Ans...'\t\t; 15\r\n"
+              b"\tDB\t'Bearb.'\t\t; 16\r\n"
+              b"\tDB\t'Groess'\t\t; 17\r\n"
+              b"\tDB\t'Suche '\t\t; 18\r\n"
+              b"\tDB\t'Verlauf'\t\t; 19\r\n"
+              b"\tDB\t'EGA Z.'\t\t; 20\r\n"
+              b"\tDB\t'Baum  '\t\t; 21\r\n"
+              b"\tDB\t'ASCII '\t\t; 22\r\n"
+              b"\tDB\t'Hex   '\t\t; 23\r\n"
+              b"\tDB\t'Umbr.E'\t\t; 24\r\n"
+              b"\tDB\t'Umbr.A'\t\t; 25\r\n"
+              b"\tDB\t'Suchen'\t\t; 26\r\n"
+              b"\tDB\t'Sichern'\t\t; 27\r\n"
+              b"\tDB\t'Sich..'\t\t; 28\r\n"
+              b"\tDB\t'End+Sp'\t\t; 29\r\n"
+              b"\tDB\t'Speich'\t\t; 30\r\n"
+              b"\tDB\t'Haupt '\t\t; 31\r\n"
+              b"\tDB\t'Name  '\t\t; 32\r\n"
+              b"\tDB\t'NeuLes'\t\t; 33"
+          )
+          if data.count(old_keys) != 1:
+              raise SystemExit('Expected one 4.05 function-key label table')
+          source.write_bytes(data.replace(old_keys, new_keys))
+
+          translated = Path('versions/4.05/VCSETUP.ASM').read_text(encoding='utf-8')
+          dos_source = translated.encode('cp437', errors='strict')
+          Path('/tmp/vc-build/versions/4.05/VCSETUP.ASM').write_bytes(dos_source)
           PY
-          cp versions/4.05/VCSETUP.ASM /tmp/vc-build/versions/4.05/VCSETUP.ASM
 
       - name: Compile VC 4.05 and setup utility
         working-directory: /tmp/vc-build
