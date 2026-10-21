@@ -1312,14 +1312,14 @@ M49_10	ENDP
 
 	.CONST
 Cnf00_S	DB			' Einstellungen ',0
-Cnf01_S	DB	' Ú ^bBildschirmfarben^b ',0FFh,80h+6,'Ä¿  Ú ^bFensteroptionen^b ',0FFh,80h+16,'Ä¿ ',0
+Cnf01_S	DB	' Ú ^bBildfarben^b ',0FFh,80h+6,'Ä¿  Ú ^bFensteropt.^b ',0FFh,80h+16,'Ä¿ ',0
 Cnf02_S	DB	' ³  ( ) S/W  ³^IEinfg nach unten',0FFh,11,'³ ',0
 Cnf03_S	DB	' ³  ( ) Farbe',0FFh,10,'³^IVerzeichniswechsel',0FFh,4,'³ ',0
 Cnf04_S	DB	' ³  ( ) Laptop',0FFh,9,'³  À',0FFh,80h+31,'ÄÙ ',0
-Cnf05_S	DB	' À',0FFh,80h+21,'ÄÙ  Ú ^bWeitere Optionen^b ',0FFh,80h+16,'Ä¿ ',0
-Cnf06_S	DB	' Ú ^bBildschirm aus nach^b Ä¿^IMenueleiste immer da  ³ ',0
-Cnf07_S	DB	' ³  ( ) 40 minutes',0FFh,5,'³^ISetup auto speichern',0FFh,10,'³ ',0
-Cnf08_S	DB	' ³  ( ) 20 minutes',0FFh,5,'³^IAbfrage beim Ende',0FFh,5,'³ ',0
+Cnf05_S	DB	' À',0FFh,80h+21,'ÄÙ  Ú ^bWeitere Opt.^b ',0FFh,80h+16,'Ä¿ ',0
+Cnf06_S	DB	' Ú ^bBild aus nach^b Ä¿^IMenueleiste stets  ³ ',0
+Cnf07_S	DB	' ³  ( ) 40 minutes',0FFh,5,'³^ISetup sichern',0FFh,10,'³ ',0
+Cnf08_S	DB	' ³  ( ) 20 minutes',0FFh,5,'³^IAbfrage Ende',0FFh,5,'³ ',0
 Cnf09_S	DB	' ³  ( )  5 minutes',0FFh,5,'³^IZoomrahmen',0FFh,12,'³ ',0
 Cnf10_S	DB	' ³  ( )  3 minutes',0FFh,5,'³  À',0FFh,80h+31,'ÄÙ ',0
 Cnf11_S	DB	' ³  ( )  1 minute',0FFh,6,'³  Ú ^bMausoptionen^b ',0FFh,80h+16,'Ä¿ ',0
