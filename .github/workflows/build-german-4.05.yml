@@ -27,6 +27,7 @@ jobs:
         run: |
           git clone --depth 1 --branch build --recurse-submodules https://github.com/ddanila/vc.git /tmp/vc-build
           cp versions/4.05/VCMENU.INC /tmp/vc-build/versions/4.05/VCMENU.INC
+          cp versions/4.05/VCSUB2.INC /tmp/vc-build/versions/4.05/VCSUB2.INC
           cp versions/4.05/VCSETUP.ASM /tmp/vc-build/versions/4.05/VCSETUP.ASM
 
       - name: Compile VC 4.05 and setup utility
