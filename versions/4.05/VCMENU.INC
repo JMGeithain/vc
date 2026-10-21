@@ -38,9 +38,9 @@ MenuLn1	DB	' Kurz'			,0
 	DB	' Groesse'				,0
 	DB	' Unsortiert'			,0
 	DB					 0
-	DB	' Neu lesen'	   ,0FFh,5,'^R'	,0
+	DB	' Neu lesen'	   ,0FFh,4,'^R'	,0
 	DB	' Filter...'	   ,0FFh,4,'^F'	,0
-	DB	' Laufwerk...'	   ,0FFh,4,'@F1',0
+	DB	' Laufwerk...'	   ,0FFh,3,'@F1',0
 MenuLn2	DB	'Hilfe'		   ,0FFh,14,'F1',0
 	DB	'Benutzermenue'	   ,0FFh, 8,'F2',0
 	DB	'Anzeigen'		   ,0FFh,14,'F3',0
@@ -79,14 +79,14 @@ MenuLn4	DB	' Konfiguration...'		,0
 	DB					 0
 	DB	' Automatische Menues'			,0
 	DB	' Pfadabfrage'			,0
-	DB	' Tastenleiste'	   ,0FFh,11,'^B',0
+	DB	' Tastenleiste'	   ,0FFh,10,'^B',0
 	DB	' Vollbild'			,0
 	DB	' Verz.groessen auto'		,0
 	DB	' Ministatus'			,0
 	DB	' Uhr'			,0
 	DB	' Speicherbelegung'		,0
 	DB					 0
-	DB	' Einst. speichern' ,0FFh,4,'Shift-F9',0
+	DB	' Einst. speichern' ,0FFh,3,'Shift-F9',0
 Ctrl_S	DB	'Strg-'
 Alt_S	DB	'Alt-'
 
