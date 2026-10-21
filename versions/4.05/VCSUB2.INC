@@ -240,8 +240,8 @@ PutKey0	ENDP
 ;-------------------- Output menu bar ------------------
 ;			   AL - Case
 	.CONST
-PtMnu_S	DB	0FFh,4,'Links',0FFh,4,'Dateien',0FFh,4,'Befehle'
-	DB	0FFh,4,'Optionen',0FFh,4,'Rechts',0FFh,26,0
+PtMnu_S	DB	0FFh,4,'Left',0FFh,4,'Files',0FFh,4,'Commands'
+	DB	0FFh,4,'Options',0FFh,4,'Right',0FFh,31,0
 
 	.DATA
 PtMnu_B	DB	Menu_C
