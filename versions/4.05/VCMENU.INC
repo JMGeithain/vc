@@ -58,8 +58,8 @@ MenuLn2	DB	'Hilfe'		   ,0FFh,14,'F1',0
 	DB	'Auswahl wiederherstellen ^M'		,0
 	DB					 0
 	DB	'Beenden'		 ,0FFh,14,'F10'	,0
-MenuLn3	DB	'Tree'		 ,0FFh,18,'@F10',0
-	DB	'Volume-Label'	 ,0FFh,10,'^F4'	,0
+MenuLn3	DB	'Baum'		 ,0FFh,18,'@F10',0
+	DB	'Datentraeger'	 ,0FFh,10,'^F4'	,0
 	DB	'Speicherinfo'	 ,0FFh,11,'@F5'	,0
 	DB	'Verzeichnisgroessen',0FFh, 7,'@F6'	,0
 	DB	'Datei suchen'	 ,0FFh,13,'@F7'	,0
@@ -1020,9 +1020,9 @@ M08_00:	MOV	CL,CH			; Sort
 Filt0_S	DB	' Filter ',0
 Filt1_S	DB	'Anzuzeigende Dateien',0
 Filt2_S	DB	'Eigene Maske:',0FFh,14,0
-Filt3_S	DB	'[ ] Versteckte Dateien',0FFh,5,0
-Filt4_S	DB	'[ ] Ausfuehrbare',0
-OkCn_S  DB	'[ Ok ]',0FFh,3,'[Abbruch]',0
+Filt3_S	DB	'[ ] Versteckte',0FFh,5,0
+Filt4_S	DB	'[ ] Programme',0
+OkCn_S  DB	'[ OK ]',0FFh,3,'[Abbruch]',0
 
 	.DATA
 Filt_P	DB	Box_C, BoxCu_C, Box_C, 0
