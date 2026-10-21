@@ -1409,12 +1409,12 @@ M60_02:	CALL	PutPrm
 
 	.CONST
 Set00_S	DB		' Advanced Options '		 ,0
-Set01_S	DB	'Ú ^bKey configuration^b ',0FFh,80h+16,0C4BFh,0
+Set01_S	DB	'Ú ^bKey configuration^b ',0FFh,80h+16,0C4h,0BFh,0
 Set02_S	DB	'^IAlt alone selects menu',0FFh,7,0B3h,0
 Set03_S	DB	'^IEscape toggles panels on/off ³',0
 Set04_S	DB	'^IAlternative viewer',0FFh,11,0B3h,0
 Set05_S	DB	'^IAlternative editor',0FFh,11,0B3h,0
-Set07_S	DB	'Ú ^bOther options^b ',0FFh,80h+20,0C4BFh,0
+Set07_S	DB	'Ú ^bOther options^b ',0FFh,80h+20,0C4h,0BFh,0
 Set08_S	DB	'^IQuick execute commands',0FFh,7,0B3h,0
 Set09_S	DB	'^IClear keyboard buffer',0FFh,8,0B3h,0
 Set10_S	DB	' À',0FFh,80h+35,'ÄÙ ',0
