@@ -1312,18 +1312,18 @@ M49_10	ENDP
 
 	.CONST
 Cnf00_S	DB			' Einstellungen ',0
-Cnf01_S	DB	' Ú ^bScreen colors^b ',0FFh,80h+6,'Ä¿  Ú ^bPanel options^b ',0FFh,80h+16,'Ä¿ ',0
-Cnf02_S	DB	' ³  ( ) Black & White  ³^IIns moves down',0FFh,11,'³ ',0
-Cnf03_S	DB	' ³  ( ) Color',0FFh,10,'³^IAuto change directory',0FFh,4,'³ ',0
+Cnf01_S	DB	' Ú ^bBildschirmfarben^b ',0FFh,80h+6,'Ä¿  Ú ^bFensteroptionen^b ',0FFh,80h+16,'Ä¿ ',0
+Cnf02_S	DB	' ³  ( ) S/W  ³^IEinfg nach unten',0FFh,11,'³ ',0
+Cnf03_S	DB	' ³  ( ) Farbe',0FFh,10,'³^IVerzeichniswechsel',0FFh,4,'³ ',0
 Cnf04_S	DB	' ³  ( ) Laptop',0FFh,9,'³  À',0FFh,80h+31,'ÄÙ ',0
-Cnf05_S	DB	' À',0FFh,80h+21,'ÄÙ  Ú ^bOther options^b ',0FFh,80h+16,'Ä¿ ',0
-Cnf06_S	DB	' Ú ^bScreen blank delay^b Ä¿^IMenu bar always visible  ³ ',0
-Cnf07_S	DB	' ³  ( ) 40 minutes',0FFh,5,'³^IAuto save setup',0FFh,10,'³ ',0
-Cnf08_S	DB	' ³  ( ) 20 minutes',0FFh,5,'³^IConfirmation on quit',0FFh,5,'³ ',0
-Cnf09_S	DB	' ³  ( )  5 minutes',0FFh,5,'³^IZooming boxes',0FFh,12,'³ ',0
+Cnf05_S	DB	' À',0FFh,80h+21,'ÄÙ  Ú ^bWeitere Optionen^b ',0FFh,80h+16,'Ä¿ ',0
+Cnf06_S	DB	' Ú ^bBildschirm aus nach^b Ä¿^IMenueleiste immer da  ³ ',0
+Cnf07_S	DB	' ³  ( ) 40 minutes',0FFh,5,'³^ISetup auto speichern',0FFh,10,'³ ',0
+Cnf08_S	DB	' ³  ( ) 20 minutes',0FFh,5,'³^IAbfrage beim Ende',0FFh,5,'³ ',0
+Cnf09_S	DB	' ³  ( )  5 minutes',0FFh,5,'³^IZoomrahmen',0FFh,12,'³ ',0
 Cnf10_S	DB	' ³  ( )  3 minutes',0FFh,5,'³  À',0FFh,80h+31,'ÄÙ ',0
-Cnf11_S	DB	' ³  ( )  1 minute',0FFh,6,'³  Ú ^bMouse options^b ',0FFh,80h+16,'Ä¿ ',0
-Cnf12_S	DB	' ³  ( ) Off',0FFh,12,'³^ILeft-handed mouse',0FFh,8,'³ ',0
+Cnf11_S	DB	' ³  ( )  1 minute',0FFh,6,'³  Ú ^bMausoptionen^b ',0FFh,80h+16,'Ä¿ ',0
+Cnf12_S	DB	' ³  ( ) Aus',0FFh,12,'³^ILinkshandmaus',0FFh,8,'³ ',0
 Cnf13_S	DB	' À',0FFh,80h+21,'ÄÙ  À',0FFh,80h+31,'ÄÙ ',0
 Cnf14_S	DB	'Mit ^r Leertaste ^r aendern, mit ^r  ^r / ^r  ^r bewegen',0
 Cnf15_S	DB			'zwischen Optionen wechseln',0
@@ -1409,12 +1409,12 @@ M60_02:	CALL	PutPrm
 
 	.CONST
 Set00_S	DB		' Erweiterte Optionen '		 ,0
-Set01_S	DB	'Ú ^bKey configuration^b ',0FFh,80h+16,0C4h,0BFh,0
+Set01_S	DB	'Ú ^bTastenkonfiguration^b ',0FFh,80h+16,0C4h,0BFh,0
 Set02_S	DB	'^IAlt allein oeffnet Menue',0FFh,7,0B3h,0
 Set03_S	DB	'^IEsc schaltet Fenster ein/aus ³',0
 Set04_S	DB	'^IAlternativer Betrachter',0FFh,11,0B3h,0
 Set05_S	DB	'^IAlternativer Editor',0FFh,11,0B3h,0
-Set07_S	DB	'Ú ^bOther options^b ',0FFh,80h+20,0C4h,0BFh,0
+Set07_S	DB	'Ú ^bWeitere Optionen^b ',0FFh,80h+20,0C4h,0BFh,0
 Set08_S	DB	'^ISchnellbefehle ausfuehren',0FFh,7,0B3h,0
 Set09_S	DB	'^ITastaturpuffer leeren',0FFh,8,0B3h,0
 Set10_S	DB	' À',0FFh,80h+35,'ÄÙ ',0
