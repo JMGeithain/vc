@@ -240,8 +240,8 @@ PutKey0	ENDP
 ;-------------------- Output menu bar ------------------
 ;			   AL - Case
 	.CONST
-PtMnu_S	DB	0FFh,4,'Left',0FFh,4,'Files',0FFh,4,'Commands'
-	DB	0FFh,4,'Options',0FFh,4,'Right',0FFh,31,0
+PtMnu_S	DB	0FFh,4,'Links',0FFh,4,'Dateien',0FFh,4,'Befehle'
+	DB	0FFh,4,'Optionen',0FFh,4,'Rechts',0FFh,26,0
 
 	.DATA
 PtMnu_B	DB	Menu_C
@@ -459,7 +459,7 @@ Panel	PROC	NEAR
 	MOV	AH,CS:[BP]
 	CALL	Color
 	CALL	BoxDubl
-	MOV	AL,'ƒ'
+	MOV	AL,'√Ñ'
 	SUB	DI,2*3*80
 	CMP	DS:WinTyp,1
 	JE	Panel1
@@ -474,10 +474,10 @@ Panel	PROC	NEAR
 	CALL	CntLine
 	CALL	BasAdr
 	ADD	DI,2*(80-20)
-	MOV	BX,'«∂'
+	MOV	BX,'√á¬∂'
 	CALL	BoxLine
 	ADD	DI,2*7*80
-Panel1:	MOV	BX,'«∂'
+Panel1:	MOV	BX,'√á¬∂'
 	CALL	BoxLine
 Panel2:	CMP	DS:WinTyp,0
 	JNE	Panel6
@@ -501,21 +501,21 @@ Panel3:	PUSH	CS
 	MOV	CX,AX
 	POP	AX
 	MOV	SI,BX
-	MOV	AL,'—'
+	MOV	AL,'√ë'
 	CALL	Panel8
-	MOV	AL,'≥'
+	MOV	AL,'¬≥'
 Panel4:	CALL	Panel8
 	LOOP	Panel4
-	MOV	AL,'œ'
+	MOV	AL,'√è'
 	CMP	ES:MiniSta,0
 	JZ	Panel5
 	PUSH	DI
-	MOV	BX,'«∂'
-	MOV	AL,'ƒ'
+	MOV	BX,'√á¬∂'
+	MOV	AL,'√Ñ'
 	XOR	CX,CX
 	CALL	BoxLine
 	POP	DI
-	MOV	AL,'¡'
+	MOV	AL,'√Å'
 Panel5:	CALL	Panel8
 Panel6:	POP	AX
 	POP	BX
@@ -1004,15 +1004,15 @@ PutName	PROC	NEAR
 	MOV	AL,' '
 	TEST	BL,6
 	JZ	PutNm1
-	MOV	AL,'∞'
+	MOV	AL,'¬∞'
 PutNm1:	CMP	ES:ColTyp,2
 	JNE	PutNm2
 	TEST	BL,40H
 	JZ	PutNm2
-	MOV	AL,'ﬁ'
+	MOV	AL,'√û'
 	TEST	BL,6
 	JZ	PutNm2
-	MOV	AL,'€'
+	MOV	AL,'√õ'
 PutNm2:	STOSW
 	MOV	CX,3
 	LODSB
@@ -1405,15 +1405,15 @@ SetCr1:	ADD	BH,CL
 	MOV	BYTE PTR ES:[SI],' '
 	TEST	CL,6
 	JZ	SetCr2
-	MOV	BYTE PTR ES:[SI],'∞'
+	MOV	BYTE PTR ES:[SI],'¬∞'
 SetCr2:	TEST	CL,40h
 	JZ	SetCr8
 	CMP	ES:ColTyp,2
 	JNE	SetCr7
-	MOV	BYTE PTR ES:[SI],'ﬁ'
+	MOV	BYTE PTR ES:[SI],'√û'
 	TEST	CL,6
 	JZ	SetCr7
-	MOV	BYTE PTR ES:[SI],'€'
+	MOV	BYTE PTR ES:[SI],'√õ'
 	JMP	SetCr7
 SetCr3:	JMP	SetCr9
 SetCr4:	CMP	SI,ES:TreeBuf.TreeLen
@@ -1442,7 +1442,7 @@ SetCr5:	CALL	BasAdr
 	PUSH	AX
 	MOV	AH,Back_C
 	CALL	Color
-	MOV	AL,'ƒ'
+	MOV	AL,'√Ñ'
 	STOSW
 	POP	AX
 	DEC	DX
@@ -1930,7 +1930,7 @@ Inpt50:	PUSH	BX
 	JC	Inpt51
 	OR	DI,DI
 	JZ	Inpt52
-	MOV	AL,'˚'
+	MOV	AL,'√ª'
 Inpt51:	MOV	AH,0
 	CMP	AX,SI
 	JE	Inpt52
