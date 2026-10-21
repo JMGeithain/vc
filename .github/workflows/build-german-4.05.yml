@@ -27,7 +27,16 @@ jobs:
         run: |
           git clone --depth 1 --branch build --recurse-submodules https://github.com/ddanila/vc.git /tmp/vc-build
           cp versions/4.05/VCMENU.INC /tmp/vc-build/versions/4.05/VCMENU.INC
-          cp versions/4.05/VCSUB2.INC /tmp/vc-build/versions/4.05/VCSUB2.INC
+          python3 - <<'PY'
+          from pathlib import Path
+          source = Path('/tmp/vc-build/versions/4.05/VCSUB2.INC')
+          data = source.read_bytes()
+          old = b"PtMnu_S\\tDB\\t0FFh,4,'Left',0FFh,4,'Files',0FFh,4,'Commands'\\r\\n\\tDB\\t0FFh,4,'Options',0FFh,4,'Right',0FFh,31,0"
+          new = b"PtMnu_S\\tDB\\t0FFh,4,'Links',0FFh,4,'Dateien',0FFh,4,'Befehle'\\r\\n\\tDB\\t0FFh,4,'Optionen',0FFh,4,'Rechts',0FFh,26,0"
+          if data.count(old) != 1:
+              raise SystemExit('Expected one 4.05 menu-bar source block')
+          source.write_bytes(data.replace(old, new))
+          PY
           cp versions/4.05/VCSETUP.ASM /tmp/vc-build/versions/4.05/VCSETUP.ASM
 
       - name: Compile VC 4.05 and setup utility
