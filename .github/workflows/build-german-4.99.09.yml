@@ -103,6 +103,18 @@ jobs:
           VC_BUILD_MODE: native
         run: ./build.sh 4.99.09
 
+
+      - name: Verify complete runtime package
+        run: |
+          test -s /tmp/vc-build/build/4.99.09/jwasm/VC.COM || {
+            echo "::error::VC.COM was not produced"
+            exit 1
+          }
+          test -s /tmp/vc-build/build/4.99.09/VC.OVL || {
+            echo "::error::VC.OVL is missing; do not publish an incomplete test package"
+            exit 1
+          }
+
       - name: Package test binaries and build logs
         if: always()
         run: |
@@ -120,6 +132,7 @@ jobs:
           EOF
 
       - name: Upload test package
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: vc-4.99.09-german-test
