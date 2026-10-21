@@ -2,7 +2,7 @@ name: Build German VC 4.05
 
 on:
   push:
-    branches: [german-4.05]
+    branches: [german-4.05, diagnostic-f9-menu1-english]
   workflow_dispatch:
 
 permissions:
@@ -16,7 +16,7 @@ jobs:
       - name: Check out German translation
         uses: actions/checkout@v4
         with:
-          ref: german-4.05
+          ref: ${{ github.ref_name }}
 
       - name: Install build tools
         run: |
