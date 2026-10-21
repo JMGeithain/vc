@@ -49,7 +49,7 @@ CNTRY	STRUC
   TimeFmt DB	?			; Time format
   CaseMap DD	?			; Addres of case map
 	  DB	2 DUP(?)		; Data separator
-	  DB	8 DUP(?)		; Reserved
+	  DB	10 DUP(?)		; Reserved (DOS 3+ country table is 34 bytes)
 CNTRY	ENDS
 
 ; The dialog box header structure definition.
@@ -303,7 +303,7 @@ DefInit	DB	1			; FulScr
 	DB	1			; ChgTree
 	DB	1			; DriveB
 	DB	MiliSec, Sec		; DelayTm
-	DB	'๚๙'			; StarTab
+	DB	'รบรน'			; StarTab
 	DB	51 DUP (0)		; Reserved
 DefWCB	DB	0			; WinTyp
 	DB	0			; BrfFul
@@ -959,18 +959,18 @@ Main50	ENDP
 ;-------------------- Configuration --------------------
 	.CONST
 Cnf00_S	DB			' Configuration ',0
-Cnf01_S	DB	' ฺ ^bGeneral options^b ',0FFh,80h+10,'ฤฟ  ฺ ^bExecute options^b '  ,0FFh,80h+15,'ฤฟ ',0
-Cnf02_S	DB	' ณ  [ ] Auto menus'          ,0FFh,11,'ณ  ณ  [ ] Memory allocation'     ,0FFh, 9,'ณ ',0
-Cnf03_S	DB	' ณ  [ ] Path prompt'         ,0FFh,10,'ณ  ณ  [ ] Quick execute commands',0FFh, 4,'ณ ',0
-Cnf04_S	DB	' ณ  [ ] Key bar'             ,0FFh,14,'ณ  ณ  [ ] TSR manager'           ,0FFh,15,'ณ ',0
-Cnf05_S	DB	' ณ  [ ] Menu bar visible'    ,0FFh, 5,'ณ  ภ'                       ,0FFh,80h+32,'ฤู ',0
-Cnf06_S	DB	' ณ  [ ] Full screen'         ,0FFh,10,'ณ  ฺ ^bKeyboard options^b ' ,0FFh,80h+14,'ฤฟ ',0
-Cnf07_S	DB	' ณ  [ ] Clock'               ,0FFh,16,'ณ  ณ  [ ] Alt alone selects menu',0FFh, 4,'ณ ',0
-Cnf08_S	DB	' ณ  [ ] Confirmation on quit '       ,'ณ  ณ  [ ] Esc toggles screen on/off '    ,'ณ ',0
-Cnf09_S	DB	' ณ  [ ] Error sound'         ,0FFh,10,'ณ  ณ  [ ] Alternative viewer'    ,0FFh, 8,'ณ ',0
-Cnf10_S	DB	' ณ  [ ] Auto save setup'     ,0FFh, 6,'ณ  ณ  [ ] Alternative editor'    ,0FFh, 8,'ณ ',0
-Cnf11_S	DB	' ณ  [ ] Show logical drive B:ณ  ณ  [ ] Clear keyboard buffer' ,0FFh, 5,'ณ ',0
-Cnf12_S	DB	' ภ'                     ,0FFh,80h+27,'ฤู  ภ'                       ,0FFh,80h+32,'ฤู ',0
+Cnf01_S	DB	' ร ^bGeneral options^b ',0FFh,80h+10,'รยฟ  ร ^bExecute options^b '  ,0FFh,80h+15,'รยฟ ',0
+Cnf02_S	DB	' ยณ  [ ] Auto menus'          ,0FFh,11,'ยณ  ยณ  [ ] Memory allocation'     ,0FFh, 9,'ยณ ',0
+Cnf03_S	DB	' ยณ  [ ] Path prompt'         ,0FFh,10,'ยณ  ยณ  [ ] Quick execute commands',0FFh, 4,'ยณ ',0
+Cnf04_S	DB	' ยณ  [ ] Key bar'             ,0FFh,14,'ยณ  ยณ  [ ] TSR manager'           ,0FFh,15,'ยณ ',0
+Cnf05_S	DB	' ยณ  [ ] Menu bar visible'    ,0FFh, 5,'ยณ  ร€'                       ,0FFh,80h+32,'รร ',0
+Cnf06_S	DB	' ยณ  [ ] Full screen'         ,0FFh,10,'ยณ  ร ^bKeyboard options^b ' ,0FFh,80h+14,'รยฟ ',0
+Cnf07_S	DB	' ยณ  [ ] Clock'               ,0FFh,16,'ยณ  ยณ  [ ] Alt alone selects menu',0FFh, 4,'ยณ ',0
+Cnf08_S	DB	' ยณ  [ ] Confirmation on quit '       ,'ยณ  ยณ  [ ] Esc toggles screen on/off '    ,'ยณ ',0
+Cnf09_S	DB	' ยณ  [ ] Error sound'         ,0FFh,10,'ยณ  ยณ  [ ] Alternative viewer'    ,0FFh, 8,'ยณ ',0
+Cnf10_S	DB	' ยณ  [ ] Auto save setup'     ,0FFh, 6,'ยณ  ยณ  [ ] Alternative editor'    ,0FFh, 8,'ยณ ',0
+Cnf11_S	DB	' ยณ  [ ] Show logical drive B:ยณ  ยณ  [ ] Clear keyboard buffer' ,0FFh, 5,'ยณ ',0
+Cnf12_S	DB	' ร€'                     ,0FFh,80h+27,'รร  ร€'                       ,0FFh,80h+32,'รร ',0
 Cnf13_S	DB	'Press ^r Space ^r to change an option, ^r  ^r and ^r  ^r',0
 Cnf14_S	DB			'to move between options',0
 OkCn_S  DB	'[ Ok ]',0FFh,3,'[ Cancel ]',0
@@ -1048,19 +1048,19 @@ F02_01:	JMP	Main00
 ;------------------ Screen and Mouse -------------------
 	.CONST
 Scr00_S	DB			' Screen and Mouse ',0
-Scr01_S	DB	' ฺ ^bScreen colors^b ',0FFh,80h+6,'ฤฟ  ฺ ^bScreen output^b '  ,0FFh,80h+14,'ฤฟ ',0
-Scr02_S	DB	' ณ  ( ) Black & White  '          ,'ณ  ณ  ( ) Synchronized access' ,0FFh, 4,'ณ ',0
-Scr03_S	DB	' ณ  ( ) Color'            ,0FFh,10,'ณ  ณ  ( ) Asynchronized access',0FFh, 3,'ณ ',0
-Scr04_S	DB	' ณ  ( ) Laptop'            ,0FFh,9,'ณ  ณ  ( ) Auto detect'         ,0FFh,12,'ณ ',0
-Scr05_S	DB	' ภ'                  ,0FFh,80h+21,'ฤู  ภ'                     ,0FFh,80h+29,'ฤู ',0
-Scr06_S	DB	' ฺ ^bScreen blank delay^b ','ฤฟ  ฺ ^bOther options^b ',0FFh,80h+14,'ฤฟ ',0
-Scr07_S	DB	' ณ  ( ) 40 minutes' ,0FFh, 5,'ณ  ณ  [ ] Zooming boxes'     ,0FFh,10,'ณ ',0
-Scr08_S	DB	' ณ  ( ) 20 minutes' ,0FFh, 5,'ณ  ณ  Screen saver chars:'   ,0FFh, 8,'ณ ',0
-Scr09_S	DB	' ณ  ( )  5 minutes' ,0FFh, 5,'ณ  ภ'                   ,0FFh,80h+29,'ฤู ',0
-Scr10_S	DB	' ณ  ( )  3 minutes' ,0FFh, 5,'ณ  ฺ ^bMouse options^b ',0FFh,80h+14,'ฤฟ ',0
-Scr11_S	DB	' ณ  ( )  1 minute'  ,0FFh, 6,'ณ  ณ  [ ] Left-handed mouse' ,0FFh, 6,'ณ ',0
-Scr12_S	DB	' ณ  ( ) Off'        ,0FFh,12,'ณ  ภ'                   ,0FFh,80h+29,'ฤู ',0
-Scr13_S	DB	' ภ'            ,0FFh,80h+21,'ฤู',0FFh,34,0
+Scr01_S	DB	' ร ^bScreen colors^b ',0FFh,80h+6,'รยฟ  ร ^bScreen output^b '  ,0FFh,80h+14,'รยฟ ',0
+Scr02_S	DB	' ยณ  ( ) Black & White  '          ,'ยณ  ยณ  ( ) Synchronized access' ,0FFh, 4,'ยณ ',0
+Scr03_S	DB	' ยณ  ( ) Color'            ,0FFh,10,'ยณ  ยณ  ( ) Asynchronized access',0FFh, 3,'ยณ ',0
+Scr04_S	DB	' ยณ  ( ) Laptop'            ,0FFh,9,'ยณ  ยณ  ( ) Auto detect'         ,0FFh,12,'ยณ ',0
+Scr05_S	DB	' ร€'                  ,0FFh,80h+21,'รร  ร€'                     ,0FFh,80h+29,'รร ',0
+Scr06_S	DB	' ร ^bScreen blank delay^b ','รยฟ  ร ^bOther options^b ',0FFh,80h+14,'รยฟ ',0
+Scr07_S	DB	' ยณ  ( ) 40 minutes' ,0FFh, 5,'ยณ  ยณ  [ ] Zooming boxes'     ,0FFh,10,'ยณ ',0
+Scr08_S	DB	' ยณ  ( ) 20 minutes' ,0FFh, 5,'ยณ  ยณ  Screen saver chars:'   ,0FFh, 8,'ยณ ',0
+Scr09_S	DB	' ยณ  ( )  5 minutes' ,0FFh, 5,'ยณ  ร€'                   ,0FFh,80h+29,'รร ',0
+Scr10_S	DB	' ยณ  ( )  3 minutes' ,0FFh, 5,'ยณ  ร ^bMouse options^b ',0FFh,80h+14,'รยฟ ',0
+Scr11_S	DB	' ยณ  ( )  1 minute'  ,0FFh, 6,'ยณ  ยณ  [ ] Left-handed mouse' ,0FFh, 6,'ยณ ',0
+Scr12_S	DB	' ยณ  ( ) Off'        ,0FFh,12,'ยณ  ร€'                   ,0FFh,80h+29,'รร ',0
+Scr13_S	DB	' ร€'            ,0FFh,80h+21,'รร',0FFh,34,0
 Scr14_S	DB	'Press ^r Space ^r to change an option, ^r  ^r and ^r  ^r',0
 Scr15_S	DB			'to move between options',0
 
@@ -1135,18 +1135,18 @@ F03_02:	CALL	SetSnow
 ;-------------------- Panel options --------------------
 	.CONST
 Pan00_S	DB			' Panel options ',0
-Pan01_S	DB	' ฺ ^bFile panel options^b '   ,0FFh,80h+18,'ฤฟ ',0
-Pan02_S	DB	' ณ  [ ] Mini status line'          ,0FFh,16,'ณ ',0
-Pan03_S	DB	' ณ  [ ] Auto directory size'       ,0FFh,13,'ณ ',0
-Pan04_S	DB	' ณ  [ ] Ins moves down'            ,0FFh,18,'ณ ',0
-Pan05_S	DB	' ณ  [ ] Unselect during group operation '  ,'ณ ',0
-Pan06_S	DB	' ภ'                           ,0FFh,80h+38,'ฤู ',0
-Pan07_S	DB	' ฺ ^bTree panel options^b '   ,0FFh,80h+18,'ฤฟ ',0
-Pan08_S	DB	' ณ  [ ] Auto change directory'     ,0FFh,11,'ณ ',0
-Pan09_S	DB	' ณ  [ ] Show hidden subdirectories',0FFh, 6,'ณ ',0
-Pan10_S	DB	' ณ  [ ] Auto rescan tree'          ,0FFh,16,'ณ ',0
-Pan11_S	DB	' ณ  Auto change dir time delay:'   ,0FFh, 9,'ณ ',0
-Pan12_S	DB	' ภ'                           ,0FFh,80h+38,'ฤู ',0
+Pan01_S	DB	' ร ^bFile panel options^b '   ,0FFh,80h+18,'รยฟ ',0
+Pan02_S	DB	' ยณ  [ ] Mini status line'          ,0FFh,16,'ยณ ',0
+Pan03_S	DB	' ยณ  [ ] Auto directory size'       ,0FFh,13,'ยณ ',0
+Pan04_S	DB	' ยณ  [ ] Ins moves down'            ,0FFh,18,'ยณ ',0
+Pan05_S	DB	' ยณ  [ ] Unselect during group operation '  ,'ยณ ',0
+Pan06_S	DB	' ร€'                           ,0FFh,80h+38,'รร ',0
+Pan07_S	DB	' ร ^bTree panel options^b '   ,0FFh,80h+18,'รยฟ ',0
+Pan08_S	DB	' ยณ  [ ] Auto change directory'     ,0FFh,11,'ยณ ',0
+Pan09_S	DB	' ยณ  [ ] Show hidden subdirectories',0FFh, 6,'ยณ ',0
+Pan10_S	DB	' ยณ  [ ] Auto rescan tree'          ,0FFh,16,'ยณ ',0
+Pan11_S	DB	' ยณ  Auto change dir time delay:'   ,0FFh, 9,'ยณ ',0
+Pan12_S	DB	' ร€'                           ,0FFh,80h+38,'รร ',0
 Pan13_S	DB	'Press ^r Space ^r to change an option,',0
 Pan14_S	DB	'arrows to move between options',0
 NoTm1_S	DB	'Illegal format of',0
@@ -1944,104 +1944,104 @@ F07_85	ENDP
 
 ;---------------------- Set color ----------------------
 	.CONST
-Page1_S	DB	'ษออออออออออออัออ C:\DOS ออออออออัอ 4:55p                  '
-	DB	'บ    Name    ณ   Size  ณ  Date  ณ Time บ                  '
-	DB	'บ..          ณUP--DIRณ10-29-91ณ 2:55pบ                  '
-	DB	'บcommand  comณ    54619ษออออออออออออออออ Tree อออออออออออ '
-	DB	'บappend   exeณ     8170บ \                                '
-	DB	'บas                    บ รฤฤDOS                           '
-	DB	'บat   ษออออออ Drive letบ รฤÝVC          Þ                 '
-	DB	'บba   บ    Choose left บ รฤฤTOOLS                         '
-	DB	'บch   บ  A   B   C   D บ รฤÝARC         Þ                 '
-	DB	'บch   ศออออออออออออออออบ รฤฤTEST                          '
-	DB	'บco                    บ                                  '
-	DB	'บdebug    exeณ    15718บ   ษอออออออ User Menu อออออออป    '
-	DB	'บdeltree  exeณ     7930บ   บ F1  Archives...         บ    '
-	DB	'บdiskcomp comณ     7249บ   บ F2  Format floppy disk  บ    '
-	DB	'บdiskcopy comณ     8763บ   บ F4  Edit file           บ    '
-	DB	'บdoskey   comณ     4729บ   ศอออออออออออออออออออออออออผ    '
-	DB	'บedlin    exeณ    10007บ                                  '
-	DB	'บexe2bin  exeณ     6755บ รฤฤDOCS                          '
-	DB	'บexpand   exeณ    16129บ ภฤ TMP                           '
-	DB	'บfasthelp exeณ     8199บ                                  '
-	DB	'วฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤบ                                  '
-	DB	'บ   32,891 bytes in 3 sบ                                  '
-	DB	'ศออออออออออออออออออออออบ                                  '
-	DB	'C:\DOS>                วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ '
-	DB	'1Help   2Menu   3View  บC:\DOS                            '
+Page1_S	DB	'รรรรรรรรรรรรรร‘รร C:\DOS รรรรรรรรร‘ร 4:55p                  '
+	DB	'ยบ    Name    ยณ   Size  ยณ  Date  ยณ Time ยบ                  '
+	DB	'ยบ..          ยณUP--DIRยณ10-29-91ยณ 2:55pยบ                  '
+	DB	'ยบcommand  comยณ    54619รรรรรรรรรรรรรรรรร Tree รรรรรรรรรรร '
+	DB	'ยบappend   exeยณ     8170ยบ \                                '
+	DB	'ยบas                    ยบ รรรDOS                           '
+	DB	'ยบat   รรรรรรร Drive letยบ รรรVC          ร                 '
+	DB	'ยบba   ยบ    Choose left ยบ รรรTOOLS                         '
+	DB	'ยบch   ยบ  A   B   C   D ยบ รรรARC         ร                 '
+	DB	'ยบch   รรรรรรรรรรรรรรรรรยบ รรรTEST                          '
+	DB	'ยบco                    ยบ                                  '
+	DB	'ยบdebug    exeยณ    15718ยบ   รรรรรรรร User Menu รรรรรรรยป    '
+	DB	'ยบdeltree  exeยณ     7930ยบ   ยบ F1  Archives...         ยบ    '
+	DB	'ยบdiskcomp comยณ     7249ยบ   ยบ F2  Format floppy disk  ยบ    '
+	DB	'ยบdiskcopy comยณ     8763ยบ   ยบ F4  Edit file           ยบ    '
+	DB	'ยบdoskey   comยณ     4729ยบ   รรรรรรรรรรรรรรรรรรรรรรรรรรยผ    '
+	DB	'ยบedlin    exeยณ    10007ยบ                                  '
+	DB	'ยบexe2bin  exeยณ     6755ยบ รรรDOCS                          '
+	DB	'ยบexpand   exeยณ    16129ยบ ร€ร TMP                           '
+	DB	'ยบfasthelp exeยณ     8199ยบ                                  '
+	DB	'รรรรรรรรรรรรรรรรรรรรรรรยบ                                  '
+	DB	'ยบ   32,891 bytes in 3 sยบ                                  '
+	DB	'รรรรรรรรรรรรรรรรรรรรรรรยบ                                  '
+	DB	'C:\DOS>                รรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรร '
+	DB	'1Help   2Menu   3View  ยบC:\DOS                            '
 Page2_S	DB	'    Left    Files    Commands    Options    Right         '
-	DB	'  ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ                               '
-	DB	'  ณ  Brief                ณ                ๚         ๚    '
-	DB	'  ณ  Full                 ณ                               '
-	DB	'  ณ  Info                 ณ       ๚                       '
-	DB	'  ณ  Tree                 ณ                               '
-	DB	'  ณ๛ On/Off       Ctrl-F1 ณ                      ๚       '
-	DB	'  ณ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ ณ                               '
-	DB	'  ณ  Name                 ณ                               '
-	DB	'  ณ  eXtension            ณ                               '
-	DB	'  ณ  tiMe                 ณ                               '
-	DB	'  ณ  Size                 ณ            ๚                  '
-	DB	'  ณ  Unsorted             ณ                        ๚      '
-	DB	'  ณ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ ณ                               '
-	DB	'  ณ  Re-read              ณ                               '
-	DB	'  ณ -fiLter...            ณ                              '
-	DB	'  ณ  Drive...     Alt-F1  ณ                               '
-	DB	'  ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู          ๚                    '
-	DB	'                                                   ๚      '
-	DB	'                                             ๙            '
-	DB	'                          ๚                               '
-	DB	'       ๚                                                 '
+	DB	'  รรรรรรรรรรรรรรรรรรรรรรรรยฟ                               '
+	DB	'  ยณ  Brief                ยณ                รบ         รบ    '
+	DB	'  ยณ  Full                 ยณ                               '
+	DB	'  ยณ  Info                 ยณ       รบ                       '
+	DB	'  ยณ  Tree                 ยณ                               '
+	DB	'  ยณรป On/Off       Ctrl-F1 ยณ                      รบ       '
+	DB	'  ยณ รรรรรรรรรรรรรรรรรรรรร ยณ                               '
+	DB	'  ยณ  Name                 ยณ                               '
+	DB	'  ยณ  eXtension            ยณ                               '
+	DB	'  ยณ  tiMe                 ยณ                               '
+	DB	'  ยณ  Size                 ยณ            รบ                  '
+	DB	'  ยณ  Unsorted             ยณ                        รบ      '
+	DB	'  ยณ รรรรรรรรรรรรรรรรรรรรร ยณ                               '
+	DB	'  ยณ  Re-read              ยณ                               '
+	DB	'  ยณ -fiLter...            ยณ                              '
+	DB	'  ยณ  Drive...     Alt-F1  ยณ                               '
+	DB	'  ร€รรรรรรรรรรรรรรรรรรรรรรรร          รบ                    '
+	DB	'                                                   รบ      '
+	DB	'                                             รน            '
+	DB	'                          รบ                               '
+	DB	'       รบ                                                 '
 	DB	'                                                          '
-	DB	'                    ๚                    ๚                '
+	DB	'                    รบ                    รบ                '
 	DB	'                                                          '
 Page3_S	DB	'Edit: C:\VC\                                              '
-	DB	'asm:    tas   ษอออออออออออ Choose Directory อออออออออออป '
-	DB	'obj:    lin   บ  รฤฤTOOLS                              บ '
-	DB	'sys:    dl    บ  รฤ ARC                               บ '
-	DB	'zip:    pkun   บ  รฤฤTEST                               บ '
+	DB	'asm:    tas   รรรรรรรรรรรร Choose Directory รรรรรรรรรรรยป '
+	DB	'obj:    lin   ยบ  รรรTOOLS                              ยบ '
+	DB	'sys:    dl    ยบ  รร ARC                               ยบ '
+	DB	'zip:    pkun   ยบ  รรรTEST                               ยบ '
 	DB	'arc:                                                      '
-	DB	'ice:     ษออออออออออออออออออ Error ออออออออออออออออออป    '
-	DB	"lzh:     บ      Can't read the disk in drive A:      บ    "
-	DB	'arj:     บ  Press ENTER to try again, ESC to abort,  บ    '
-	DB	'         บ or enter a different drive letter here A: บ    '
-	DB	'         ศอออออออ                                         '
-	DB	'                    ษอออออออออออ Delete อออออออออออป      '
-	DB	'               บ    บ       You are DELETING       บ    บ '
-	DB	'               บ    บ 5 files and 1 directory from บ    บ '
-	DB	'ÜÜÜÜÜÜÜÜÜÜÜÜ   บ    บ            C:\TMP            บ    บ '
-	DB	' ษออออออออออ   บ    บ     Delete   All   Cancel    บ    บ '
-	DB	' บ Format of   บ    ศออออออออออออออออออออออออออออออผ    บ '
-	DB	' บ             วฤ                                      ฤถ '
-	DB	" บ ' comment   บ C:\ARC                                 บ "
-	DB	' บ txt: edit   บ Speed search: ARC                      บ '
-	DB	' บ     cls    ศออออออออออออออออออฺ Screen colors ฤฤฤฤฤฤฟ '
-	DB	' บ  ภฤฤฤฤฤฤฤ                      ณ  ( ) Black & White  ณ '
-	DB	' ศออออออออออออออออออออออออออออออออณ  () Color          ณ '
-	DB	'฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿ณ  ( ) Laptop         ณ '
-	DB	'1Help   2Save   3       4Hex    5 ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู '
+	DB	'ice:     รรรรรรรรรรรรรรรรรรร Error รรรรรรรรรรรรรรรรรรยป    '
+	DB	"lzh:     ยบ      Can't read the disk in drive A:      ยบ    "
+	DB	'arj:     ยบ  Press ENTER to try again, ESC to abort,  ยบ    '
+	DB	'         ยบ or enter a different drive letter here A: ยบ    '
+	DB	'         รรรรรรรร                                         '
+	DB	'                    รรรรรรรรรรรร Delete รรรรรรรรรรรยป      '
+	DB	'               ยบ    ยบ       You are DELETING       ยบ    ยบ '
+	DB	'               ยบ    ยบ 5 files and 1 directory from ยบ    ยบ '
+	DB	'รรรรรรรรรรรร   ยบ    ยบ            C:\TMP            ยบ    ยบ '
+	DB	' รรรรรรรรรรร   ยบ    ยบ     Delete   All   Cancel    ยบ    ยบ '
+	DB	' ยบ Format of   ยบ    รรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรยผ    ยบ '
+	DB	' ยบ             รร                                      รยถ '
+	DB	" ยบ ' comment   ยบ C:\ARC                                 ยบ "
+	DB	' ยบ txt: edit   ยบ Speed search: ARC                      ยบ '
+	DB	' ยบ     cls    รรรรรรรรรรรรรรรรรรรร Screen colors รรรรรรยฟ '
+	DB	' ยบ  ร€รรรรรรร                      ยณ  ( ) Black & White  ยณ '
+	DB	' รรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรยณ  () Color          ยณ '
+	DB	'รรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรยณ  ( ) Laptop         ยณ '
+	DB	'1Help   2Save   3       4Hex    5 ร€รรรรรรรรรรรรรรรรรรรรรร '
 Page4_S	DB	'                                                          '
 	DB	'                                                          '
-	DB	'   ษอออออออออออออออออออออออออออออ Help ออออออออออออออออออ '
-	DB	'   บ Configuration...                                     '
-	DB	'   วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ   ษอออออออออออออออออออออ '
-	DB	'   บ  This dialog box  allows yo   บ               The Vo '
-	DB	'   บ  options.  Use the cursor k   วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ '
-	DB	'   บ  to change, and use the Spa   บ  About the Commander '
-	DB	'   บ  Enter to accept the dialog   บ  Keyboard reference  '
-	DB	'   บ                               บ  View -- Keyboard re '
-	DB	'   บ  ฺ Screen colors ฤฤฤฤฤฤฟ  T   บ  View -- Status line '
-	DB	'   บ  ณ  ( ) Black & White  ณ  w   บ  Edit -- Keyboard re '
-	DB	'   บ  ณ  () Color          ณ  t   บ  Edit -- Status line '
-	DB	'   บ  ณ  ( ) Laptop         ณ  l   บ  Left/Right menu     '
-	DB	'   บ  ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู  c   บ       Brief/Full     '
-	DB	'   บ                               บ       Info           '
-	DB	'   บ  ฺ Screen blank delay ฤฟ  T   บ       Tree           '
-	DB	'   บ  ณ  ( ) 40 minutes     ณ  b   บ       On/Off         '
-	DB	'   วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ   บ       Sorting order  '
-	DB	'   บ        [ Next ]   [ Previou   บ       Re-read a pane '
-	DB	'   ศออออออออออออออออออออออออออออ   วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ '
-	DB	'                                   บ                      '
-	DB	'                                   ศอออออออออออออออออออออ '
+	DB	'   รรรรรรรรรรรรรรรรรรรรรรรรรรรรรร Help รรรรรรรรรรรรรรรรรร '
+	DB	'   ยบ Configuration...                                     '
+	DB	'   รรรรรรรรรรรรรรรรรรรรรรรรรรรรร   รรรรรรรรรรรรรรรรรรรรรร '
+	DB	'   ยบ  This dialog box  allows yo   ยบ               The Vo '
+	DB	'   ยบ  options.  Use the cursor k   รรรรรรรรรรรรรรรรรรรรรร '
+	DB	'   ยบ  to change, and use the Spa   ยบ  About the Commander '
+	DB	'   ยบ  Enter to accept the dialog   ยบ  Keyboard reference  '
+	DB	'   ยบ                               ยบ  View -- Keyboard re '
+	DB	'   ยบ  ร Screen colors รรรรรรยฟ  T   ยบ  View -- Status line '
+	DB	'   ยบ  ยณ  ( ) Black & White  ยณ  w   ยบ  Edit -- Keyboard re '
+	DB	'   ยบ  ยณ  () Color          ยณ  t   ยบ  Edit -- Status line '
+	DB	'   ยบ  ยณ  ( ) Laptop         ยณ  l   ยบ  Left/Right menu     '
+	DB	'   ยบ  ร€รรรรรรรรรรรรรรรรรรรรรร  c   ยบ       Brief/Full     '
+	DB	'   ยบ                               ยบ       Info           '
+	DB	'   ยบ  ร Screen blank delay รยฟ  T   ยบ       Tree           '
+	DB	'   ยบ  ยณ  ( ) 40 minutes     ยณ  b   ยบ       On/Off         '
+	DB	'   รรรรรรรรรรรรรรรรรรรรรรรรรรรรร   ยบ       Sorting order  '
+	DB	'   ยบ        [ Next ]   [ Previou   ยบ       Re-read a pane '
+	DB	'   รรรรรรรรรรรรรรรรรรรรรรรรรรรรร   รรรรรรรรรรรรรรรรรรรรรร '
+	DB	'                                   ยบ                      '
+	DB	'                                   รรรรรรรรรรรรรรรรรรรรรร '
 	DB	'                                                          '
 	DB	'                                                          '
 
@@ -2302,7 +2302,7 @@ Col12:	CALL	GetMous
 	JZ	Col18
 Col13:	TEST	AL,2
 	JZ	Col15
-	MOV	AL,'๛'
+	MOV	AL,'รป'
 	CALL	TypMous
 Col14:	CALL	GetMous
 	CALL	ClrKbd
@@ -2500,22 +2500,22 @@ F08_01:	JMP	Main00
 
 ;-------------------- Country info ---------------------
 	.CONST
-Inf00_S	DB				' Country info ',0
-Inf01_S	DB	' ฺ ^bTime format^b ฤฟ ฺ ^bDate format^b ฤฤฟ ฺ ^bNumbers format^b ฤฟ ',0
-Inf02_S	DB	' ณ             ', ' ณ ณ              ', ' ณ ณ                ', ' ณ ',0
-Inf03_S	DB	' ภ',0FFh,80h+14,  'ฤู ภ',0FFh,80h+15,   'ฤู ภ',0FFh,80h+17,     'ฤู ',0
-Inf04_S	DB	' ฺ ^bCharacters table^b '                     ,0FFh,80h+34,       'ฤฟ ',0
-Inf05_S	DB	' ณ',0FFh,6,   '€…‘’“”•–— กขฃคฅฆง'   ,0FFh,6,'ณ ',0
-Inf06_S	DB	' ณ',0FFh,3,'ฺฤ                                        '   ,0FFh,6,'ณ ',0
-Inf07_S	DB	' ณ',0FFh,3,'ณ                                          ฤฟ',0FFh,3,'ณ ',0
-Inf08_S	DB	' ณ',0FFh,3,'ณ'                                 ,0FFh,44,'ณ',0FFh,3,'ณ ',0
-Inf09_S	DB	' ณ',0FFh,3,'ณ  จฉชซฌญฎฏเแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛üýþ   ณ',0FFh,3,'ณ ',0
-Inf10_S	DB	' ณ',0FFh,3,'รฤ                                          ณ',0FFh,3,'ณ ',0
-Inf11_S	DB	' ณ',0FFh,3,'ณ                                          ฤด',0FFh,3,'ณ ',0
-Inf12_S	DB	' ณ',0FFh,3,'ภฤฤฤฤ ^bUpper case',0FFh,14,'Lower case^b ฤฤฤฤู',0FFh,3,'ณ ',0
-Inf13_S	DB	' ภ',0FFh,80h+52,                                                   'ฤู ',0
-Inf14_S	DB	'The country information is determined by',0
-Inf15_S	DB	'the ^bcountry=^b statement in the ^bconfig.sys^b file.',0
+Inf00_S	DB				' Landesinfo ',0
+Inf01_S	DB	' ร ^bZeitformat^b รยฟ ร ^bDatumsformat^b รรยฟ ร ^bZahlenformat^b รยฟ ',0
+Inf02_S	DB	' ยณ             ', ' ยณ ยณ              ', ' ยณ ยณ                ', ' ยณ ',0
+Inf03_S	DB	' ร€',0FFh,80h+14,  'รร ร€',0FFh,80h+15,   'รร ร€',0FFh,80h+17,     'รร ',0
+Inf04_S	DB	' ร ^bZeichentabelle^b '                     ,0FFh,80h+34,       'รยฟ ',0
+Inf05_S	DB	' ยณ',0FFh,6,   'ย€ยยยยย…ยยยยยยยยยยยย‘ย’ย“ย”ย•ย–ย—ยยยยยยยยย ยกยขยฃยคยฅยฆยง'   ,0FFh,6,'ยณ ',0
+Inf06_S	DB	' ยณ',0FFh,3,'รร                                        '   ,0FFh,6,'ยณ ',0
+Inf07_S	DB	' ยณ',0FFh,3,'ยณ                                          รยฟ',0FFh,3,'ยณ ',0
+Inf08_S	DB	' ยณ',0FFh,3,'ยณ'                                 ,0FFh,44,'ยณ',0FFh,3,'ยณ ',0
+Inf09_S	DB	' ยณ',0FFh,3,'ยณ  ยจยฉยชยซยฌยญยฎยฏร รกรขรฃรครฅรฆรงรจรฉรชรซรฌรญรฎรฏรฐรฑรฒรณรดรตรถรทรธรนรบรปรผรฝรพ   ยณ',0FFh,3,'ยณ ',0
+Inf10_S	DB	' ยณ',0FFh,3,'รร                                          ยณ',0FFh,3,'ยณ ',0
+Inf11_S	DB	' ยณ',0FFh,3,'ยณ                                          รยด',0FFh,3,'ยณ ',0
+Inf12_S	DB	' ยณ',0FFh,3,'ร€รรรร ^bGrossbuchst.',0FFh,14,'Kleinbuchst.^b รรรรร',0FFh,3,'ยณ ',0
+Inf13_S	DB	' ร€',0FFh,80h+52,                                                   'รร ',0
+Inf14_S	DB	'Landesdaten richten sich nach der',0
+Inf15_S	DB	'^bcountry=^b-Angabe in der Datei ^bconfig.sys^b.',0
 Ok_S	DB	'[ Ok ]',0
 
 	.DATA
