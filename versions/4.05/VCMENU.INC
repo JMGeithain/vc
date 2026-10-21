@@ -26,21 +26,21 @@ KeyTab	DW	5E00h,0501h, 1312h,0D01h, 2106h,0E01h, 6800h,0F01h
 KeyTabE:
 
 	.CONST
-MenuLn1	DB	' Kurz'			,0
-	DB	' Lang'				,0
+MenuLn1	DB	' Brief'			,0
+	DB	' Full'				,0
 	DB	' Info'				,0
-	DB	' Baum'				,0
-	DB	' Ein/Aus'	   ,0FFh,7,'^F1',0
+	DB	' Tree'				,0
+	DB	' On/Off'	   ,0FFh,7,'^F1',0
 	DB					 0
 	DB	' Name'				,0
-	DB	' Endung'			,0
-	DB	' Zeit'				,0
-	DB	' Groesse'				,0
-	DB	' Unsortiert'			,0
+	DB	' eXtension'			,0
+	DB	' tiMe'				,0
+	DB	' Size'				,0
+	DB	' Unsorted'			,0
 	DB					 0
-	DB	' Neu lesen'	   ,0FFh,6,'^R'	,0
-	DB	' Filter...'	   ,0FFh,4,'^F'	,0
-	DB	' Laufwerk...'	   ,0FFh,5,'@F1',0
+	DB	' Re-read'	   ,0FFh,6,'^R'	,0
+	DB	' fiLter...'	   ,0FFh,4,'^F'	,0
+	DB	' Drive...'	   ,0FFh,5,'@F1',0
 MenuLn2	DB	'Hilfe'		   ,0FFh,14,'F1',0
 	DB	'Benutzermenue'	   ,0FFh, 9,'F2',0
 	DB	'Anzeigen'		   ,0FFh,14,'F3',0
