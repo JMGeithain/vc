@@ -114,8 +114,9 @@ jobs:
               raise SystemExit('Expected one 4.05 function-key label table')
           source.write_bytes(data.replace(old_keys, new_keys))
 
+          # Recover the original single-byte DOS character values from GitHub's UTF-8 text.
           translated = Path('versions/4.05/VCSETUP.ASM').read_text(encoding='utf-8')
-          dos_source = translated.encode('cp437', errors='strict')
+          dos_source = translated.encode('latin-1', errors='strict')
           Path('/tmp/vc-build/versions/4.05/VCSETUP.ASM').write_bytes(dos_source)
           PY
 
