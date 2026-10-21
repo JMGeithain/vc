@@ -317,7 +317,7 @@ DefWCB	DB	0			; WinTyp
 
 	.CONST
 	DB	13,10
-Init_S	DB	       'The ',PrgName,' Setup, Version ',VcVers
+Init_S	DB	       PrgName,' Einrichtung, Version ',VcVers
 	DB	13,10, 'Copyright (C) 1991-2000 Vsevolod V. Volkov'
 	DB	13,10
 	DB	13,10, '$'
