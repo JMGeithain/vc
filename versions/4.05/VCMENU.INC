@@ -456,15 +456,15 @@ F39_51:	MOV	AL,CL
 	SUB	DL,4
 	MOV	DH,0
 	XOR	CX,CX
-	MOV	BX,'Ú¿'
-	MOV	AL,'Ä'
+	MOV	BX,0DABFh
+	MOV	AL,0C4h
 	CALL	BoxLine
 	POP	CX
 	MOV	CL,CH
 	SUB	CL,3
 	MOV	CH,0
 	MOV	BX,OFFSET MnuList
-	MOV	AL,'³'
+	MOV	AL,0B3h
 F39_52:	PUSH	DI
 	PUSH	CX
 	PUSH	AX
@@ -478,7 +478,7 @@ F39_52:	PUSH	DI
 	CMP	BYTE PTR CS:[SI],0
 	JNE	F39_53
 	INC	SI
-	MOV	AL,'Ä'
+	MOV	AL,0C4h
 	REP	STOSW
 	JMP	F39_56
 F39_95:	LODS	CS:Byt
@@ -541,12 +541,12 @@ F39_56:	MOV	AL,' '
 	ADD	DI,2*80
 	LOOP	F39_52
 	PUSH	DI
-	MOV	AL,'À'
+	MOV	AL,0C0h
 	STOSW
 	MOV	CX,DX
-	MOV	AL,'Ä'
+	MOV	AL,0C4h
 	REP	STOSW
-	MOV	AL,'Ù'
+	MOV	AL,0D9h
 	STOSW
 	CALL	Shadow
 	CALL	Shadow
@@ -647,7 +647,7 @@ F39_69:	ADD	DI,2*160
 	CMP	AL,1
 F39_70:	JE	F39_71
 	ADD	DI,2*80
-F39_71:	MOV	BYTE PTR ES:[DI],'û'
+F39_71:	MOV	BYTE PTR ES:[DI],0FBh
 	POP	DI
 	CMP	AH,DS:Visible
 	JE	F39_73
@@ -660,7 +660,7 @@ F39_71:	MOV	BYTE PTR ES:[DI],'û'
 F39_72:	MOV	AH,2*80
 	MUL	AH
 	MOV	BP,AX
-	MOV	BYTE PTR ES:[DI+BP+2*561],'û'
+	MOV	BYTE PTR ES:[DI+BP+2*561],0FBh
 	JMP	F39_74
 F39_73:	MOV	AL,14
 	CALL	F40_30
@@ -794,7 +794,7 @@ F40_10	ENDP
 F40_20	PROC	NEAR
 	CMP	AL,0
 	JE	F40_21
-	MOV	BYTE PTR DS:[DI],'û'
+	MOV	BYTE PTR DS:[DI],0FBh
 F40_21:	ADD	DI,2*80
 	RET
 F40_20	ENDP
@@ -1409,14 +1409,14 @@ M60_02:	CALL	PutPrm
 
 	.CONST
 Set00_S	DB		' Advanced Options '		 ,0
-Set01_S	DB	'Ú ^bKey configuration^b ',0FFh,80h+16,'Ä¿',0
-Set02_S	DB	'^IAlt alone selects menu',0FFh,7,'³',0
+Set01_S	DB	'Ú ^bKey configuration^b ',0FFh,80h+16,0C4BFh,0
+Set02_S	DB	'^IAlt alone selects menu',0FFh,7,0B3h,0
 Set03_S	DB	'^IEscape toggles panels on/off ³',0
-Set04_S	DB	'^IAlternative viewer',0FFh,11,'³',0
-Set05_S	DB	'^IAlternative editor',0FFh,11,'³',0
-Set07_S	DB	'Ú ^bOther options^b ',0FFh,80h+20,'Ä¿',0
-Set08_S	DB	'^IQuick execute commands',0FFh,7,'³',0
-Set09_S	DB	'^IClear keyboard buffer',0FFh,8,'³',0
+Set04_S	DB	'^IAlternative viewer',0FFh,11,0B3h,0
+Set05_S	DB	'^IAlternative editor',0FFh,11,0B3h,0
+Set07_S	DB	'Ú ^bOther options^b ',0FFh,80h+20,0C4BFh,0
+Set08_S	DB	'^IQuick execute commands',0FFh,7,0B3h,0
+Set09_S	DB	'^IClear keyboard buffer',0FFh,8,0B3h,0
 Set10_S	DB	' À',0FFh,80h+35,'ÄÙ ',0
 Set11_S	DB	'Press ^r Space ^r to change an option,' ,0
 Set12_S	DB	'arrows to move between options',0
