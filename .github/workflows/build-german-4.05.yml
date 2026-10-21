@@ -1,0 +1,59 @@
+name: Build German VC 4.05
+
+on:
+  push:
+    branches: [german-4.05]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out German translation
+        uses: actions/checkout@v4
+        with:
+          ref: german-4.05
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nasm qemu-system-i386 mtools coreutils
+
+      - name: Prepare reproducible DOS build
+        run: |
+          git clone --depth 1 --branch build --recurse-submodules https://github.com/ddanila/vc.git /tmp/vc-build
+          cp versions/4.05/VCMENU.INC /tmp/vc-build/versions/4.05/VCMENU.INC
+
+      - name: Compile VC 4.05 and setup utility
+        working-directory: /tmp/vc-build
+        env:
+          VC_BUILD_MODE: native
+        run: ./build.sh 4.05
+
+      - name: Verify output and package
+        run: |
+          test -s /tmp/vc-build/build/4.05/VC.COM
+          test -s /tmp/vc-build/build/4.05/VCSETUP.COM
+          mkdir -p dist
+          cp /tmp/vc-build/build/4.05/VC.COM dist/VC.COM
+          cp /tmp/vc-build/build/4.05/VCSETUP.COM dist/VCSETUP.COM
+          cat > dist/README-DE.txt <<'EOF'
+          Volkov Commander 4.05 – deutsche Testfassung
+
+          Entwicklungsstand, kein offizielles Release.
+          Enthalten: VC.COM und VCSETUP.COM.
+          Bitte zuerst in DOSBox mit einer Testkopie ausprobieren.
+          Menue-Tastenkombinationen und Dateioperationen nach dem Start pruefen.
+          EOF
+
+      - name: Upload DOS binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: vc-4.05-german-test
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
