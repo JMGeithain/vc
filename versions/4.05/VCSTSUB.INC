@@ -267,7 +267,7 @@ DblMo6:	PUSH	CX
 	PUSH	AX
 	MOV	AL,0
 	JC	DblMo7
-	MOV	AL,'Ш'
+	MOV	AL,'ц╩'
 DblMo7:	CMP	AL,CH
 	JE	DblMo8
 	MOV	CH,AL
@@ -660,18 +660,18 @@ ShadBox	PROC	NEAR
 	MOV	BX,'  '
 	MOV	AL,' '
 	CALL	BoxLine
-	MOV	BX,'и╩'
-	MOV	AL,'м'
+	MOV	BX,'ц┴б╩'
+	MOV	AL,'ц█'
 	CALL	ShadLin
 	SUB	SI,5
 	JBE	ShdBx2
-	MOV	BX,'╨╨'
+	MOV	BX,'б╨б╨'
 	MOV	AL,' '
 ShdBx1:	CALL	ShadLin
 	DEC	SI
 	JNE	ShdBx1
-ShdBx2:	MOV	BX,'х╪'
-	MOV	AL,'м'
+ShdBx2:	MOV	BX,'ц┬б╪'
+	MOV	AL,'ц█'
 	CALL	ShadLin
 	MOV	BX,'  '
 	MOV	AL,' '
@@ -693,8 +693,8 @@ ShadBox	ENDP
 ;-------------------- One line of box ------------------
 ;			ES:DI - screen buffer
 ;			   AH - color
-;		Ё   гддддддддддддддддддддддд╤   Ё
-;		 юбы|юддддддддддбдддддддддды|юбы
+;		бЁ   ц┤ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└б╤   бЁ
+;		 ц─ц┌ц≥|ц─ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц┌ц└ц└ц└ц└ц└ц└ц└ц└ц└ц└ц≥|ц─ц┌ц≥
 ;		 CX BH         DX(AL)      BL CX
 ShadLin	PROC	NEAR
 	PUSH	DI
@@ -840,8 +840,8 @@ DiBx21:	CALL	BasAdr
 	SUB	DI,AX
 	SUB	DL,10
 	MOV	CX,3
-	MOV	BX,'г╤'
-	MOV	AL,'д'
+	MOV	BX,'ц┤б╤'
+	MOV	AL,'ц└'
 	MOV	AH,DS:[BP]
 	CALL	Color
 	CALL	BoxLine
@@ -1351,7 +1351,7 @@ Dial43:	MOV	AL,CS:[SI].mType
 	JE	Dial48
 Dial44:	MOV	DH,1
 	JMP	Dial48
-Dial45:	MOV	AH,'Ш'
+Dial45:	MOV	AH,'ц╩'
 	CMP	AL,2
 	JE	Dial46
 	MOV	AH,'x'
@@ -1405,7 +1405,7 @@ Dial51:	POP	DI
 	JMP	Dial31
 Dial52:	MOV	AL,0
 	CALL	TypMous
-	CMP	SI,'Ш'
+	CMP	SI,'ц╩'
 	JE	Dial70
 	CMP	SI,'x'
 	JE	Dial53
@@ -1954,7 +1954,7 @@ MnMn13:	MOV	AX,SI
 MnMn14:	CALL	GetMous
 	JZ	MnMn17
 	CALL	InWind
-	MOV	AL,'Ш'
+	MOV	AL,'ц╩'
 	JNC	MnMn15
 	MOV	AL,0
 MnMn15:	MOV	AH,0
@@ -2114,16 +2114,16 @@ KeyC_T	DB	 0,  0,  0,  0,  0,  0,  0,  0,  0,  0	;  0
 
 	.CONST
 Key_S	DB	'      '		;  0
-	DB	'Help  '		;  1
-	DB	'Config'		;  2
-	DB	'Screen'		;  3
-	DB	'Panels'		;  4
-	DB	'B&W   '		;  5
-	DB	'Color '		;  6
-	DB	'Laptop'		;  7
-	DB	'Reset '		;  8
-	DB	'Cntry '		;  9
-	DB	'Quit  '		; 10
+	DB	'Hilfe '		;  1
+	DB	'Konfig'		;  2
+	DB	'Bildsc'		;  3
+	DB	'Felder'		;  4
+	DB	'S/W   '		;  5
+	DB	'Farbe '		;  6
+	DB	'Mobil '		;  7
+	DB	'Norm  '		;  8
+	DB	'Land  '		;  9
+	DB	'Ende  '		; 10
 
 	.CODE
 PutKey	PROC	NEAR
@@ -2493,7 +2493,7 @@ Inpt50:	PUSH	BX
 	JC	Inpt51
 	OR	DI,DI
 	JZ	Inpt52
-	MOV	AL,'Ш'
+	MOV	AL,'ц╩'
 Inpt51:	MOV	AH,0
 	CMP	AX,SI
 	JE	Inpt52
