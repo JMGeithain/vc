@@ -26,68 +26,68 @@ KeyTab	DW	5E00h,0501h, 1312h,0D01h, 2106h,0E01h, 6800h,0F01h
 KeyTabE:
 
 	.CONST
-MenuLn1	DB	' Brief'			,0
-	DB	' Full'				,0
+MenuLn1	DB	' Kurz'			,0
+	DB	' Lang'				,0
 	DB	' Info'				,0
-	DB	' Tree'				,0
-	DB	' On/Off'	   ,0FFh,7,'^F1',0
+	DB	' Baum'				,0
+	DB	' Ein/Aus'	   ,0FFh,7,'^F1',0
 	DB					 0
 	DB	' Name'				,0
-	DB	' eXtension'			,0
-	DB	' tiMe'				,0
-	DB	' Size'				,0
-	DB	' Unsorted'			,0
+	DB	' Endung'			,0
+	DB	' Zeit'				,0
+	DB	' Groesse'				,0
+	DB	' Unsortiert'			,0
 	DB					 0
-	DB	' Re-read'	   ,0FFh,6,'^R'	,0
-	DB	' fiLter...'	   ,0FFh,4,'^F'	,0
-	DB	' Drive...'	   ,0FFh,5,'@F1',0
-MenuLn2	DB	'Help'		   ,0FFh,14,'F1',0
-	DB	'User menu'	   ,0FFh, 9,'F2',0
-	DB	'View'		   ,0FFh,14,'F3',0
-	DB	'Edit'		   ,0FFh,14,'F4',0
-	DB	'Copy'		   ,0FFh,14,'F5',0
-	DB	'Rename or move'   ,0FFh, 4,'F6',0
-	DB	'Make directory'   ,0FFh, 4,'F7',0
-	DB	'Delete'	   ,0FFh,12,'F8',0
+	DB	' Neu lesen'	   ,0FFh,6,'^R'	,0
+	DB	' Filter...'	   ,0FFh,4,'^F'	,0
+	DB	' Laufwerk...'	   ,0FFh,5,'@F1',0
+MenuLn2	DB	'Hilfe'		   ,0FFh,14,'F1',0
+	DB	'Benutzermenue'	   ,0FFh, 9,'F2',0
+	DB	'Anzeigen'		   ,0FFh,14,'F3',0
+	DB	'Bearbeiten'		   ,0FFh,14,'F4',0
+	DB	'Kopieren'		   ,0FFh,14,'F5',0
+	DB	'Umbenennen/Verschieben'   ,0FFh, 4,'F6',0
+	DB	'Verzeichnis anlegen'   ,0FFh, 4,'F7',0
+	DB	'Loeschen'	   ,0FFh,12,'F8',0
 	DB					 0
-	DB	'file Attributes'  ,0FFh, 3,'^A',0
+	DB	'Dateiattribute'  ,0FFh, 3,'^A',0
 	DB					 0
-	DB	'select Group'	,0FFh,6,'Gray +',0
-	DB	'uNselect group',0FFh,4,'Gray -',0
-	DB	'Invert group'	,0FFh,6,'Gray *',0
-	DB	'reStore selection ^M'		,0
+	DB	'Gruppe waehlen'	,0FFh,6,'Gray +',0
+	DB	'Gruppe abwaehlen',0FFh,4,'Gray -',0
+	DB	'Gruppe umkehren'	,0FFh,6,'Gray *',0
+	DB	'Auswahl wiederherstellen ^M'		,0
 	DB					 0
-	DB	'Quit'		 ,0FFh,14,'F10'	,0
+	DB	'Beenden'		 ,0FFh,14,'F10'	,0
 MenuLn3	DB	'Tree'		 ,0FFh,18,'@F10',0
-	DB	'Volume label'	 ,0FFh,10,'^F4'	,0
-	DB	'memory Info'	 ,0FFh,11,'@F5'	,0
-	DB	'Directory sizes',0FFh, 7,'@F6'	,0
-	DB	'Find file'	 ,0FFh,13,'@F7'	,0
-	DB	'History'	 ,0FFh,15,'@F8'	,0
-	DB	'EGA lines'	 ,0FFh,13,'@F9'	,0
+	DB	'Volume-Label'	 ,0FFh,10,'^F4'	,0
+	DB	'Speicherinfo'	 ,0FFh,11,'@F5'	,0
+	DB	'Verzeichnisgroessen',0FFh, 7,'@F6'	,0
+	DB	'Datei suchen'	 ,0FFh,13,'@F7'	,0
+	DB	'Verlauf'	 ,0FFh,15,'@F8'	,0
+	DB	'EGA-Zeilen'	 ,0FFh,13,'@F9'	,0
 	DB					 0
-	DB	'Swap panels'	   ,0FFh,11,'^U',0
-	DB	'Panels on/off'	   ,0FFh, 9,'^O',0
-	DB	'Compare directories',0FFh,3,'^C',0
+	DB	'Fenster tauschen'	   ,0FFh,11,'^U',0
+	DB	'Fenster ein/aus'	   ,0FFh, 9,'^O',0
+	DB	'Verzeichnisse vergleichen',0FFh,3,'^C',0
 	DB					 0
-	DB	'Menu file edit'		,0
-MenuLn4	DB	' Configuration...'		,0
-	DB	' advanced Options...'		,0
-	DB	' eXtension file edit...'	,0
-	DB	' Viewers...'			,0
-	DB	' Editors...'			,0
+	DB	'Menue-Datei bearbeiten'		,0
+MenuLn4	DB	' Konfiguration...'		,0
+	DB	' Erweiterte Optionen...'		,0
+	DB	' Erweiterungsdatei...'	,0
+	DB	' Betrachter...'			,0
+	DB	' Editoren...'			,0
 	DB					 0
-	DB	' Auto menus'			,0
-	DB	' Path prompt'			,0
-	DB	' Key bar'	   ,0FFh,12,'^B',0
-	DB	' Full screen'			,0
-	DB	' auto Directory sizes'		,0
-	DB	' miNi status'			,0
-	DB	' cLock'			,0
-	DB	' Memory allocation'		,0
+	DB	' Automatische Menues'			,0
+	DB	' Pfadabfrage'			,0
+	DB	' Tastenleiste'	   ,0FFh,12,'^B',0
+	DB	' Vollbild'			,0
+	DB	' Verzeichnisgroessen automatisch'		,0
+	DB	' Ministatus'			,0
+	DB	' Uhr'			,0
+	DB	' Speicherbelegung'		,0
 	DB					 0
-	DB	' Save setup' ,0FFh,9,'Shift-F9',0
-Ctrl_S	DB	'Ctrl-'
+	DB	' Einstellungen speichern' ,0FFh,9,'Shift-F9',0
+Ctrl_S	DB	'Strg-'
 Alt_S	DB	'Alt-'
 
 	.DATA
@@ -456,15 +456,15 @@ F39_51:	MOV	AL,CL
 	SUB	DL,4
 	MOV	DH,0
 	XOR	CX,CX
-	MOV	BX,'Ú¿'
-	MOV	AL,'Ä'
+	MOV	BX,'ÃšÂ¿'
+	MOV	AL,'Ã„'
 	CALL	BoxLine
 	POP	CX
 	MOV	CL,CH
 	SUB	CL,3
 	MOV	CH,0
 	MOV	BX,OFFSET MnuList
-	MOV	AL,'³'
+	MOV	AL,'Â³'
 F39_52:	PUSH	DI
 	PUSH	CX
 	PUSH	AX
@@ -478,7 +478,7 @@ F39_52:	PUSH	DI
 	CMP	BYTE PTR CS:[SI],0
 	JNE	F39_53
 	INC	SI
-	MOV	AL,'Ä'
+	MOV	AL,'Ã„'
 	REP	STOSW
 	JMP	F39_56
 F39_95:	LODS	CS:Byt
@@ -541,12 +541,12 @@ F39_56:	MOV	AL,' '
 	ADD	DI,2*80
 	LOOP	F39_52
 	PUSH	DI
-	MOV	AL,'À'
+	MOV	AL,'Ã€'
 	STOSW
 	MOV	CX,DX
-	MOV	AL,'Ä'
+	MOV	AL,'Ã„'
 	REP	STOSW
-	MOV	AL,'Ù'
+	MOV	AL,'Ã™'
 	STOSW
 	CALL	Shadow
 	CALL	Shadow
@@ -647,7 +647,7 @@ F39_69:	ADD	DI,2*160
 	CMP	AL,1
 F39_70:	JE	F39_71
 	ADD	DI,2*80
-F39_71:	MOV	BYTE PTR ES:[DI],'û'
+F39_71:	MOV	BYTE PTR ES:[DI],'Ã»'
 	POP	DI
 	CMP	AH,DS:Visible
 	JE	F39_73
@@ -660,7 +660,7 @@ F39_71:	MOV	BYTE PTR ES:[DI],'û'
 F39_72:	MOV	AH,2*80
 	MUL	AH
 	MOV	BP,AX
-	MOV	BYTE PTR ES:[DI+BP+2*561],'û'
+	MOV	BYTE PTR ES:[DI+BP+2*561],'Ã»'
 	JMP	F39_74
 F39_73:	MOV	AL,14
 	CALL	F40_30
@@ -794,7 +794,7 @@ F40_10	ENDP
 F40_20	PROC	NEAR
 	CMP	AL,0
 	JE	F40_21
-	MOV	BYTE PTR DS:[DI],'û'
+	MOV	BYTE PTR DS:[DI],'Ã»'
 F40_21:	ADD	DI,2*80
 	RET
 F40_20	ENDP
@@ -1312,23 +1312,23 @@ M49_10	ENDP
 
 	.CONST
 Cnf00_S	DB			' Configuration ',0
-Cnf01_S	DB	' Ú ^bScreen colors^b ',0FFh,80h+6,'Ä¿  Ú ^bPanel options^b ',0FFh,80h+16,'Ä¿ ',0
-Cnf02_S	DB	' ³  ( ) Black & White  ³^IIns moves down',0FFh,11,'³ ',0
-Cnf03_S	DB	' ³  ( ) Color',0FFh,10,'³^IAuto change directory',0FFh,4,'³ ',0
-Cnf04_S	DB	' ³  ( ) Laptop',0FFh,9,'³  À',0FFh,80h+31,'ÄÙ ',0
-Cnf05_S	DB	' À',0FFh,80h+21,'ÄÙ  Ú ^bOther options^b ',0FFh,80h+16,'Ä¿ ',0
-Cnf06_S	DB	' Ú ^bScreen blank delay^b Ä¿^IMenu bar always visible  ³ ',0
-Cnf07_S	DB	' ³  ( ) 40 minutes',0FFh,5,'³^IAuto save setup',0FFh,10,'³ ',0
-Cnf08_S	DB	' ³  ( ) 20 minutes',0FFh,5,'³^IConfirmation on quit',0FFh,5,'³ ',0
-Cnf09_S	DB	' ³  ( )  5 minutes',0FFh,5,'³^IZooming boxes',0FFh,12,'³ ',0
-Cnf10_S	DB	' ³  ( )  3 minutes',0FFh,5,'³  À',0FFh,80h+31,'ÄÙ ',0
-Cnf11_S	DB	' ³  ( )  1 minute',0FFh,6,'³  Ú ^bMouse options^b ',0FFh,80h+16,'Ä¿ ',0
-Cnf12_S	DB	' ³  ( ) Off',0FFh,12,'³^ILeft-handed mouse',0FFh,8,'³ ',0
-Cnf13_S	DB	' À',0FFh,80h+21,'ÄÙ  À',0FFh,80h+31,'ÄÙ ',0
+Cnf01_S	DB	' Ãš ^bScreen colors^b ',0FFh,80h+6,'Ã„Â¿  Ãš ^bPanel options^b ',0FFh,80h+16,'Ã„Â¿ ',0
+Cnf02_S	DB	' Â³  ( ) Black & White  Â³^IIns moves down',0FFh,11,'Â³ ',0
+Cnf03_S	DB	' Â³  ( ) Color',0FFh,10,'Â³^IAuto change directory',0FFh,4,'Â³ ',0
+Cnf04_S	DB	' Â³  ( ) Laptop',0FFh,9,'Â³  Ã€',0FFh,80h+31,'Ã„Ã™ ',0
+Cnf05_S	DB	' Ã€',0FFh,80h+21,'Ã„Ã™  Ãš ^bOther options^b ',0FFh,80h+16,'Ã„Â¿ ',0
+Cnf06_S	DB	' Ãš ^bScreen blank delay^b Ã„Â¿^IMenu bar always visible  Â³ ',0
+Cnf07_S	DB	' Â³  ( ) 40 minutes',0FFh,5,'Â³^IAuto save setup',0FFh,10,'Â³ ',0
+Cnf08_S	DB	' Â³  ( ) 20 minutes',0FFh,5,'Â³^IConfirmation on quit',0FFh,5,'Â³ ',0
+Cnf09_S	DB	' Â³  ( )  5 minutes',0FFh,5,'Â³^IZooming boxes',0FFh,12,'Â³ ',0
+Cnf10_S	DB	' Â³  ( )  3 minutes',0FFh,5,'Â³  Ã€',0FFh,80h+31,'Ã„Ã™ ',0
+Cnf11_S	DB	' Â³  ( )  1 minute',0FFh,6,'Â³  Ãš ^bMouse options^b ',0FFh,80h+16,'Ã„Â¿ ',0
+Cnf12_S	DB	' Â³  ( ) Off',0FFh,12,'Â³^ILeft-handed mouse',0FFh,8,'Â³ ',0
+Cnf13_S	DB	' Ã€',0FFh,80h+21,'Ã„Ã™  Ã€',0FFh,80h+31,'Ã„Ã™ ',0
 Cnf14_S	DB	'Press ^r Space ^r to change an option, ^r  ^r and ^r  ^r',0
 Cnf15_S	DB			'to move between options',0
 Chk1_S	DB	'  '
-Chk2_S	DB	'³  [ ] ',0
+Chk2_S	DB	'Â³  [ ] ',0
 
 	.DATA
 Conf_P	DB	Conf_C, CnfRe_C, CnfBo_C, 0
@@ -1409,15 +1409,15 @@ M60_02:	CALL	PutPrm
 
 	.CONST
 Set00_S	DB		' Advanced Options '		 ,0
-Set01_S	DB	'Ú ^bKey configuration^b ',0FFh,80h+16,'Ä¿',0
-Set02_S	DB	'^IAlt alone selects menu',0FFh,7,'³',0
-Set03_S	DB	'^IEscape toggles panels on/off ³',0
-Set04_S	DB	'^IAlternative viewer',0FFh,11,'³',0
-Set05_S	DB	'^IAlternative editor',0FFh,11,'³',0
-Set07_S	DB	'Ú ^bOther options^b ',0FFh,80h+20,'Ä¿',0
-Set08_S	DB	'^IQuick execute commands',0FFh,7,'³',0
-Set09_S	DB	'^IClear keyboard buffer',0FFh,8,'³',0
-Set10_S	DB	' À',0FFh,80h+35,'ÄÙ ',0
+Set01_S	DB	'Ãš ^bKey configuration^b ',0FFh,80h+16,'Ã„Â¿',0
+Set02_S	DB	'^IAlt alone selects menu',0FFh,7,'Â³',0
+Set03_S	DB	'^IEscape toggles panels on/off Â³',0
+Set04_S	DB	'^IAlternative viewer',0FFh,11,'Â³',0
+Set05_S	DB	'^IAlternative editor',0FFh,11,'Â³',0
+Set07_S	DB	'Ãš ^bOther options^b ',0FFh,80h+20,'Ã„Â¿',0
+Set08_S	DB	'^IQuick execute commands',0FFh,7,'Â³',0
+Set09_S	DB	'^IClear keyboard buffer',0FFh,8,'Â³',0
+Set10_S	DB	' Ã€',0FFh,80h+35,'Ã„Ã™ ',0
 Set11_S	DB	'Press ^r Space ^r to change an option,' ,0
 Set12_S	DB	'arrows to move between options',0
 
