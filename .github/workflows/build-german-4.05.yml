@@ -204,7 +204,7 @@ jobs:
           missing = [old.decode('ascii') for old, count in seen.items() if count == 0]
           if missing:
               raise SystemExit('Missing expected setup labels: ' + ', '.join(missing))
-                    Path('/tmp/vc-build/versions/4.05/VCSETUP.ASM').write_bytes(dos_source)
+          Path('/tmp/vc-build/versions/4.05/VCSETUP.ASM').write_bytes(dos_source)
           translated_sub = Path('versions/4.05/VCSTSUB.INC').read_text(encoding='utf-8')
           dos_sub = translated_sub.encode('latin-1', errors='strict')
           Path('/tmp/vc-build/versions/4.05/VCSTSUB.INC').write_bytes(dos_sub)
