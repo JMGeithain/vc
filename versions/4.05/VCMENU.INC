@@ -1311,7 +1311,7 @@ M49_14:	RET
 M49_10	ENDP
 
 	.CONST
-Cnf00_S	DB			' Configuration ',0
+Cnf00_S	DB			' Einstellungen ',0
 Cnf01_S	DB	' Ú ^bScreen colors^b ',0FFh,80h+6,'Ä¿  Ú ^bPanel options^b ',0FFh,80h+16,'Ä¿ ',0
 Cnf02_S	DB	' ³  ( ) Black & White  ³^IIns moves down',0FFh,11,'³ ',0
 Cnf03_S	DB	' ³  ( ) Color',0FFh,10,'³^IAuto change directory',0FFh,4,'³ ',0
@@ -1325,8 +1325,8 @@ Cnf10_S	DB	' ³  ( )  3 minutes',0FFh,5,'³  À',0FFh,80h+31,'ÄÙ ',0
 Cnf11_S	DB	' ³  ( )  1 minute',0FFh,6,'³  Ú ^bMouse options^b ',0FFh,80h+16,'Ä¿ ',0
 Cnf12_S	DB	' ³  ( ) Off',0FFh,12,'³^ILeft-handed mouse',0FFh,8,'³ ',0
 Cnf13_S	DB	' À',0FFh,80h+21,'ÄÙ  À',0FFh,80h+31,'ÄÙ ',0
-Cnf14_S	DB	'Press ^r Space ^r to change an option, ^r  ^r and ^r  ^r',0
-Cnf15_S	DB			'to move between options',0
+Cnf14_S	DB	'Mit ^r Leertaste ^r aendern, mit ^r  ^r / ^r  ^r bewegen',0
+Cnf15_S	DB			'zwischen Optionen wechseln',0
 Chk1_S	DB	'  '
 Chk2_S	DB	'³  [ ] ',0
 
@@ -1408,18 +1408,18 @@ M60_02:	CALL	PutPrm
 	JMP	Init50
 
 	.CONST
-Set00_S	DB		' Advanced Options '		 ,0
+Set00_S	DB		' Erweiterte Optionen '		 ,0
 Set01_S	DB	'Ú ^bKey configuration^b ',0FFh,80h+16,0C4h,0BFh,0
-Set02_S	DB	'^IAlt alone selects menu',0FFh,7,0B3h,0
-Set03_S	DB	'^IEscape toggles panels on/off ³',0
-Set04_S	DB	'^IAlternative viewer',0FFh,11,0B3h,0
-Set05_S	DB	'^IAlternative editor',0FFh,11,0B3h,0
+Set02_S	DB	'^IAlt allein oeffnet Menue',0FFh,7,0B3h,0
+Set03_S	DB	'^IEsc schaltet Fenster ein/aus ³',0
+Set04_S	DB	'^IAlternativer Betrachter',0FFh,11,0B3h,0
+Set05_S	DB	'^IAlternativer Editor',0FFh,11,0B3h,0
 Set07_S	DB	'Ú ^bOther options^b ',0FFh,80h+20,0C4h,0BFh,0
-Set08_S	DB	'^IQuick execute commands',0FFh,7,0B3h,0
-Set09_S	DB	'^IClear keyboard buffer',0FFh,8,0B3h,0
+Set08_S	DB	'^ISchnellbefehle ausfuehren',0FFh,7,0B3h,0
+Set09_S	DB	'^ITastaturpuffer leeren',0FFh,8,0B3h,0
 Set10_S	DB	' À',0FFh,80h+35,'ÄÙ ',0
-Set11_S	DB	'Press ^r Space ^r to change an option,' ,0
-Set12_S	DB	'arrows to move between options',0
+Set11_S	DB	'Mit ^r Leertaste ^r Option aendern,' ,0
+Set12_S	DB	'Pfeile wechseln Optionen',0
 
 	.DATA
 Sets_P	DB	Conf_C, CnfRe_C, CnfBo_C, 0
@@ -1459,7 +1459,7 @@ M61_00:	PUSH	ES			; Advanced options
 M61_01:	JMP	Func04
 
 	.CONST
-ExFl_S	DB	' Extension File ',0
+ExFl_S	DB	' Erweiterungsdatei ',0
 MnLc1_S	DB	'Hauptmenue bearbeiten oder',0
 MnLc2_S	DB	'lokales ^I?',0
 UsMnu_S	DB	'Benutzermenue',0
@@ -1582,7 +1582,7 @@ M73_00:	MOV	BX,OFFSET LoadFl	; Memory allocation
 	JMP	M66_01
 
 	.CONST
-SvSt0_S	DB	' Setup ',0
+SvSt0_S	DB	' Einstellungen ',0
 SvSt1_S	DB	'Aktuelle Einstellungen',0
 SvSt2_S	DB	'speichern?',0
 SvSt3_S	DB	'Speichern',0FFh,3,'Cancel',0
