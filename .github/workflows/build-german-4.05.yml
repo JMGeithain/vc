@@ -140,6 +140,206 @@ jobs:
           # Recover the original single-byte DOS character values from GitHub's UTF-8 text.
           translated = Path('versions/4.05/VCSETUP.ASM').read_text(encoding='utf-8')
           dos_source = translated.encode('latin-1', errors='strict')
+          old, new = "Configuration".encode('ascii'), "Konfiguration".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "General options".encode('ascii'), "Allgemeines".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Execute options".encode('ascii'), "Startoptionen".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Auto menus".encode('ascii'), "Menue auto".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Path prompt".encode('ascii'), "Pfadabfrage".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Key bar".encode('ascii'), "Tastenleiste".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Menu bar visible".encode('ascii'), "Menueleiste an".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Full screen".encode('ascii'), "Vollbild".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Clock".encode('ascii'), "Uhr".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Confirmation on quit".encode('ascii'), "Beenden bestaetigen".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Error sound".encode('ascii'), "Fehlerton".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Auto save setup".encode('ascii'), "Setup sichern".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Show logical drive B:".encode('ascii'), "Laufwerk B: zeigen".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Memory allocation".encode('ascii'), "Speicherbelegung".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Quick execute commands".encode('ascii'), "Schnellstartbefehle".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "TSR manager".encode('ascii'), "TSR-Verwalt.".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Keyboard options".encode('ascii'), "Tastatur".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Alt alone selects menu".encode('ascii'), "Alt waehlt Menue".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Esc toggles screen on/off".encode('ascii'), "Esc schaltet Anzeige um".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Alternative viewer".encode('ascii'), "Zusatzbetrachter".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Alternative editor".encode('ascii'), "Zusatzeditor".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Clear keyboard buffer".encode('ascii'), "Tastaturpuffer leeren".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Screen and Mouse".encode('ascii'), "Bild & Maus".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Screen colors".encode('ascii'), "Bildschirmfarbe".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Screen output".encode('ascii'), "Bildausgabe".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Black & White".encode('ascii'), "Schwarzweiss".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Synchronized access".encode('ascii'), "Synchron".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Asynchronized access".encode('ascii'), "Asynchron".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Auto detect".encode('ascii'), "Automatisch".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Screen blank delay".encode('ascii'), "Bildschirm aus nach".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Other options".encode('ascii'), "Sonstiges".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Zooming boxes".encode('ascii'), "Zoomfenster".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Screen saver chars:".encode('ascii'), "Bildschirmschutz:".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Mouse options".encode('ascii'), "Maus".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Left-handed mouse".encode('ascii'), "Linke Maus".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Panel options".encode('ascii'), "Paneloptionen".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "File panel options".encode('ascii'), "Dateifenster".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Mini status line".encode('ascii'), "Kurzstatus".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Auto directory size".encode('ascii'), "Ordnergroesse auto".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Ins moves down".encode('ascii'), "Einf. abwaerts".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Unselect during group operation".encode('ascii'), "Gruppe: Markierung loeschen".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Tree panel options".encode('ascii'), "Baumfenster".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Auto change directory".encode('ascii'), "Verzeichniswechsel auto".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Show hidden subdirectories".encode('ascii'), "Versteckte Ordner zeigen".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Auto rescan tree".encode('ascii'), "Baum neu lesen".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Auto change dir time delay:".encode('ascii'), "Verz.-Wechsel nach:".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "to move between options".encode('ascii'), "Optionen wechseln".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "to change an option,".encode('ascii'), "Option aendern,".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "to move between options".encode('ascii'), "Optionen wechseln".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
+          old, new = "Cancel".encode('ascii'), "Abbruch".encode('ascii')
+          if old not in dos_source:
+              raise SystemExit(f'Missing expected setup label: {a}')
+          dos_source = dos_source.replace(old, new)
           Path('/tmp/vc-build/versions/4.05/VCSETUP.ASM').write_bytes(dos_source)
           translated_sub = Path('versions/4.05/VCSTSUB.INC').read_text(encoding='utf-8')
           dos_sub = translated_sub.encode('latin-1', errors='strict')
