@@ -2302,7 +2302,7 @@ Col12:	CALL	GetMous
 	JZ	Col18
 Col13:	TEST	AL,2
 	JZ	Col15
-	MOV	AL,'û'
+	MOV	AL,96h
 	CALL	TypMous
 Col14:	CALL	GetMous
 	CALL	ClrKbd
