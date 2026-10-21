@@ -1018,10 +1018,10 @@ M08_00:	MOV	CL,CH			; Sort
 
 	.CONST
 Filt0_S	DB	' Filter ',0
-Filt1_S	DB	'Dateien anzeigen',0
-Filt2_S	DB	'Eigene:',0FFh,14,0
-Filt3_S	DB	'[ ] Versteckte',0FFh,5,0
-Filt4_S	DB	'[ ] Programme      ',0
+Filt1_S	DB	'Anzuzeigende Dateien',0
+Filt2_S	DB	'Eigene Maske:',0FFh,14,0
+Filt3_S	DB	'[ ] Versteckte Dateien',0FFh,5,0
+Filt4_S	DB	'[ ] Ausfuehrbare',0
 OkCn_S  DB	'[ Ok ]',0FFh,3,'[Abbruch]',0
 
 	.DATA
@@ -1463,7 +1463,7 @@ ExFl_S	DB	' Erweiterungsdatei ',0
 MnLc1_S	DB	'Hauptmenue bearbeiten oder',0
 MnLc2_S	DB	'lokales ^I?',0
 UsMnu_S	DB	'Benutzermenue',0
-ExtFl_S	DB	'Dateierweiterungsdatei',0
+ExtFl_S	DB	'Erweiterungsdatei',0
 MnLc3_S	DB	'Haupt',0FFh,3,'Lokal',0FFh,3,'Abbruch',0
 
 	.DATA
@@ -1583,11 +1583,11 @@ M73_00:	MOV	BX,OFFSET LoadFl	; Memory allocation
 
 	.CONST
 SvSt0_S	DB	' Einstellungen ',0
-SvSt1_S	DB	'Aktuelle Einstellungen',0
+SvSt1_S	DB	'Einstellungen jetzt',0
 SvSt2_S	DB	'speichern?',0
 SvSt3_S	DB	'Speichern',0FFh,3,'Abbruch',0
 StEr1_S	DB	'Fehler beim',0
-StEr2_S	DB	'Speichern der Setup-Datei',0
+StEr2_S	DB	'Setup-Datei speichern',0
 
 	.DATA
 SvSt_P	DB	Box_C, BoxCu_C, BoxCu_C, 0
