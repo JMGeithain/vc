@@ -324,10 +324,6 @@ jobs:
           if old not in dos_source:
               raise SystemExit('Missing expected setup label: ' + old.decode('ascii'))
           dos_source = dos_source.replace(old, new)
-          old, new = "to move between options".encode('ascii'), "Optionen wechseln".encode('ascii')
-          if old not in dos_source:
-              raise SystemExit('Missing expected setup label: ' + old.decode('ascii'))
-          dos_source = dos_source.replace(old, new)
           old, new = "to change an option,".encode('ascii'), "Option aendern,".encode('ascii')
           if old not in dos_source:
               raise SystemExit('Missing expected setup label: ' + old.decode('ascii'))
