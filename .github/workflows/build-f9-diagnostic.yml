@@ -1,0 +1,63 @@
+name: Build VC 4.05 F9 diagnostic
+
+on:
+  push:
+    branches: [diagnose-f9-menu1]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out diagnostic branch
+        uses: actions/checkout@v4
+        with:
+          ref: diagnose-f9-menu1
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nasm qemu-system-i386 mtools coreutils
+
+      - name: Prepare reproducible DOS build
+        run: |
+          git clone --depth 1 --branch build --recurse-submodules https://github.com/ddanila/vc.git /tmp/vc-build
+          cp versions/4.05/VCMENU.INC /tmp/vc-build/versions/4.05/VCMENU.INC
+
+      - name: Compile VC 4.05 and setup utility
+        working-directory: /tmp/vc-build
+        env:
+          VC_BUILD_MODE: native
+        run: ./build.sh 4.05
+
+      - name: Collect binaries and diagnostics
+        if: always()
+        run: |
+          mkdir -p dist
+          for f in VC.COM VCSETUP.COM; do
+            if [ -s "/tmp/vc-build/build/4.05/$f" ]; then cp "/tmp/vc-build/build/4.05/$f" "dist/$f"; fi
+          done
+          if [ -f /tmp/vc-build/build/4.05/stage/build.log ]; then cp /tmp/vc-build/build/4.05/stage/build.log dist/BUILD.LOG; fi
+          if [ -f /tmp/vc-build/build/4.05/stage/debugcon.log ]; then cp /tmp/vc-build/build/4.05/stage/debugcon.log dist/DEBUGCON.LOG; fi
+          cat > dist/README-DE.txt <<'EOF'
+          Volkov Commander 4.05 – F9-Diagnosefassung
+
+          Diagnosebuild: Im ersten Menü sind die sichtbaren Texte auf den englischen Originalstand zurückgesetzt.
+          Nicht als Release gedacht. Bitte nur mit einer Testkopie in DOSBox bzw. auf einem Testsystem prüfen.
+          BUILD.LOG und DEBUGCON.LOG enthalten Diagnosedaten.
+          EOF
+          test -s dist/VC.COM
+          test -s dist/VCSETUP.COM
+
+      - name: Upload DOS binaries and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vc-4.05-f9-diagnostic
+          path: dist/
+          if-no-files-found: warn
+          retention-days: 14
