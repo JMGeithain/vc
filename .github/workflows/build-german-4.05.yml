@@ -118,6 +118,9 @@ jobs:
           translated = Path('versions/4.05/VCSETUP.ASM').read_text(encoding='utf-8')
           dos_source = translated.encode('latin-1', errors='strict')
           Path('/tmp/vc-build/versions/4.05/VCSETUP.ASM').write_bytes(dos_source)
+          translated_sub = Path('versions/4.05/VCSTSUB.INC').read_text(encoding='utf-8')
+          dos_sub = translated_sub.encode('latin-1', errors='strict')
+          Path('/tmp/vc-build/versions/4.05/VCSTSUB.INC').write_bytes(dos_sub)
           PY
 
       - name: Compile VC 4.05 and setup utility
